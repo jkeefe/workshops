@@ -128,16 +128,20 @@ Another nice trick is to add multiple `-` lines. Dexter will randomly pick from 
 
 ## Wire up to Facebook
 
+Dexter is great about walking you through this entire process, under the "Platforms" button. 
+
+- To start, click on the "Platforms" button.
+- Choose Facebook.
+
 ### Setting up your Facebook Page
 
 In Facebook, bots live on "pages" you add to your profile.
 
 - You'll need a Facebook account (look on with someone if you don't have one)
-- Log in to [Facebook](https://facebook.com)
-- Dexter is great about walking you through, under the "Platforms" button. Click that.
-- Need to make a new FB "page" ... which is in addition to your personal page. 
-- In a new browser tab:
+- Open a new browser tab and log in to [Facebook](https://facebook.com)
+- To make the page ...
    - Go to https://www.facebook.com/pages/create/
+   - Make your new page. Don't worry about the pretty details, you can add them later.
    - Once it's made, look in the left column for "About" (you may need to click "see more"). Click on "About"
    - Scroll all the bottom
    - Highlight and copy the "Page Id"
