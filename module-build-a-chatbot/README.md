@@ -32,7 +32,6 @@
 - "get started"
 - Using a language called `RiveScript`
 
-[need a get-started thing here]
 ```
 + get started
 - I'm a bot that can answer your questions about Star Island. Ask me anything!
@@ -60,14 +59,14 @@
 
 - Try writing 3-4 questions yourself
 - [Writing pause!]
-- First thing ... delete all the punctuation in your questions!
+- Next ... delete all the punctuation in your questions!
     - Dexter ignores it all, and it can cause confusion
 - Also capitalization doesn't matter.
-- Try it! Now we can test our bot in the phone that's on the side. Try typing your questions.
+- Try it! Now we can test our bot in the "phone" that's on the side of the screen. Try typing your questions.
 
 ## Fuzzy matching
 
-- As written, there are lots of questions my bot won't answer
+Because Dexter is looking for exact matches, there are lots of questions our bots won't answer
     - Where is it?
     - What's its location?
     - What can you do there?
@@ -127,39 +126,54 @@ Another nice trick is to add multiple `-` lines. Dexter will randomly pick from 
 - Ooof. I don't understand. Maybe try asking in another way.
 ```
 
-## Wired up to Facebook
+## Wire up to Facebook
 
-- Need a FB login (look on with someone if you don't have one)
-- Need to make a new FB "page" ... which is in addition to your personal page. 
+### Setting up your Facebook Page
+
+In Facebook, bots live on "pages" you add to your profile.
+
+- You'll need a Facebook account (look on with someone if you don't have one)
+- Log in to [Facebook](https://facebook.com)
 - Dexter is great about walking you through, under the "Platforms" button. Click that.
-- In another tab:
-    - Log in to FB
-    - Go to https://www.facebook.com/pages/create/
-    - Once it's made, look in the left column for "About" (you may need to click "see more"). Click on "About"
-    - Scroll all the bottom
-    - Highlight and copy the "Page Id"
-    - Go back to the Dexter tab
+- Need to make a new FB "page" ... which is in addition to your personal page. 
+- In a new browser tab:
+   - Go to https://www.facebook.com/pages/create/
+   - Once it's made, look in the left column for "About" (you may need to click "see more"). Click on "About"
+   - Scroll all the bottom
+   - Highlight and copy the "Page Id"
+   - Go back to the Dexter tab
 - Paste the ID number into the box
 - Click "Next"
-- Register as a FB developer(!)
+
+### Setting up your Facebook Bot App
+
+This is a very typical setup: The bot you make needs to connect to a new "app" in the platform you are using, such as Facebook.
+
+![Bot & platform relationship](./bot_platform.png)
+
+The part missing so far is the platform app. To make an app in Facebook, you need to register as a Facebook developer.
+
+- Go to Facebook [developer portal](https://developers.facebook.com/apps/) and follow the instructions.  
+
+After you are registered as a Facebook developer we need to make that app and then make a connection between the bot settings and the app settings.
 
 - Click "Create New App"
 - Give it a name
 - Click on the "settings" at the side
-- On the FB page
-    - Get App ID 
-- On Dexter
+- On the **Facebook** tab
+    - Copy App ID 
+- On the **Dexter** tab
     - Paste App ID paste into box
-- On the FB page 
+- On the **Facebook** tab 
     - Get App Secret (you may have to confirm your password)
-- On Dexter
+- On the **Dexter** tab
     - Paste into Dexter 
-- Back at the FB page ...
+- Back at the **Facebook** tab ...
     - App Domains, put `rundexter.com`
     - Click "Add Platform" at the bottom
     - Make the site url `https://rundexter.com`
     - CLICK SAVE CHANGES
-- Back to Dexter
+- Back to the **Dexter** tab
     - Click Next
     - Click Authenticate
     - Agree
@@ -169,6 +183,7 @@ Another nice trick is to add multiple `-` lines. Dexter will randomly pick from 
 - Go to your bot! (Click the link in Dexter)
     - mine is http://m.me/147365322486738
     
+Whew!
 
 ## Better flow
 
@@ -207,14 +222,13 @@ You can encourage your user's path by providing buttons, which show up really ni
 
 ## Make it Public
 
-- Go back to that FB tab
+- Go back to that Facebook tab
 - Click "App Review" in the sidebar
 - Click the big "Make [bot name] Public" switch
 - Some things require review, like broadcasting and ads
 
 ## Pursuing more
 
-- Getting direct responses with %
 - Dexter documentation is really good
 - Read more about [RiveScript](https://www.rivescript.com/docs/tutorial), the language Dexter uses. (Most, but not all, RiveScript features are available in Dexter.)
 - Natural Language Processing
