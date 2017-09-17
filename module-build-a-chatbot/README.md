@@ -34,7 +34,8 @@
 
 ```
 + get started
-- I'm a bot that can answer your questions about Star Island. Ask me anything!
+- I'm a bot that can answer your questions about Star Island. Ask 
+me anything!
 ```
 
 ## Simple Question and Answer
@@ -49,12 +50,14 @@
 
 ```
 + How do you get there?
-- Once you get yourself to Portsmouth, you can take one of the boats that make regular trips.
+- Once you get yourself to Portsmouth, you can take one of the
+boats that make regular trips.
 ```
 
 ```
 + What's on Star Island?
-- There's a big, old hotel. Also a marine lab, some tennis courts, an old stone chapel and a historical museum. Also lots of seagulls!
+- There's a big, old hotel. Also a marine lab, some tennis courts,
+ an old stone chapel and a historical museum. Also lots of seagulls!
 ```
 
 - Try writing 3-4 questions yourself
@@ -103,7 +106,10 @@ So use brackets `[]` to denote optional things:
 
 ```
 + [*] seagulls [*]
-- They're loud think they own the island. But pretty harmless otherwise. If you go hiking on the rocks away from the hotel, tho, stay away from the small, gray ones. Parent gulls have been known to attack people to protect their young! 😯
+- They're loud think they own the island. But pretty harmless 
+otherwise. If you go hiking on the rocks away from the hotel, tho, 
+stay away from the small, gray ones. Parent gulls have been known 
+to attack people to protect their young! 😯
 ```
 
 ### A little help
@@ -195,7 +201,10 @@ For long answers, you can add "natural" pauses with `<chat>`
 
 ```
 + [*] seagulls [*]
-- They're loud think they own the island. <chat>But pretty harmless otherwise. <chat>If you go hiking on the rocks away from the hotel, tho, stay away from the small, gray ones. <chat>Parent gulls have been known to attack people to protect their young! <chat>😯
+- They're loud think they own the island. <chat>But pretty harmless 
+otherwise. <chat>If you go hiking on the rocks away from the hotel, 
+tho, stay away from the small, gray ones. <chat>Parent gulls have 
+been known to attack people to protect their young! <chat>😯
 ```
 
 ## Adding fun features
@@ -204,17 +213,20 @@ You can encourage your user's path by providing buttons, which show up really ni
 
 ```
 + get started
-- I'm a bot that can answer your questions about Star Island. What would you like to know about? ^buttons("Location", "Activities", "Getting There")
+- I'm a bot that can answer your questions about Star Island. What 
+would you like to know about? ^buttons("Location", "Activities", "Getting There")
 ```
 
 ```
 + location
-- It's 10 miles off the coast of Portsmouth, New Hampshire. <chat>Here's a link to a map: ^link("https://goo.gl/maps/T5qxWXTXLLF2","Star Island Map")
+- It's 10 miles off the coast of Portsmouth, New Hampshire. <chat>Here's
+ a link to a map: ^link("https://goo.gl/maps/T5qxWXTXLLF2","Star Island Map")
 ```
 
 ```
 + activities
-- The island is host to family conferences, day visitors, and an annual sailboat race.
+- The island is host to family conferences, day visitors, and 
+an annual sailboat race.
 ```
 
 ```
@@ -230,6 +242,98 @@ You can encourage your user's path by providing buttons, which show up really ni
 - Click "App Review" in the sidebar
 - Click the big "Make [bot name] Public" switch
 - Some things require review, like broadcasting and ads
+
+## Adding Natural Language Processing
+
+### Introduction to API.ai
+
+There are lots of tools out there to use. We'll play with [API.ai](https://api.ai).
+
+### Setup
+
+As usual, you'll need to sign up. It's free. And you'll need a Google/Gmail account.
+
+- Click "Sign up for Free"
+- Log in with Google (API.ai is a Google product now)
+- In the sidebar, chose "Prebuilt Agents"
+- Then in the main area, find the logo for the "Small Talk" prebuilt agent (Note, this is _not_ the "Small Talk" option in the left-side menu)
+- Just leave the "Link to Google Project" line empty and hit OK
+- Wait and then click "Proceed to Agent"
+- This is tricky ... now in the _drop-down_ menu, chose "Small-Talk." Again, not the "Small Talk" item that's always in the sidebar. Look for the hyphen in `Small-Talk`. That's the right one.
+- Now, to end this craziness, let's rename it. Click the gear next to `Small-Talk` (with the hyphen)
+- Call it "My-Workshop-Bot"
+- Click "Save"
+
+### Play a little
+
+Find the "Try it now" box at the top and try typing some random phrases that might constitute small talk. What happens?
+
+Pay close attention to the "Intent" and "Action" areas.
+
+Also try things that might be casual synonyms for "yes" and "no."
+
+### Connect it to your Dexter Bot
+
+- On the API.ai settings page, copy the "Client Access Token"
+- Switch to your Dexter bot
+- Paste the "Client Access Token" at the very top of your bot script.
+- In front of the token, add `! var apiai = Bearer ` so it looks something this:
+
+```
+! var apiai = Bearer ab12cd34ef56ab78cd90ef12
+```
+
+- Copy the code below and paste it to the bottom of your bot script:
+
+```
++ *
+$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
+- The action I detect is: ${{result.action}}
+
+> object encode_uri javascript
+    return encodeURIComponent(args[0])
+< object
+```
+
+- OK! Now try saying some things into the sample phone on the Dexter console.
+
+### Handle calls for help
+
+Let's be sure that whenever someone says help, they get a kind response:
+
+```
++ help
+- I'm sorry you're having trouble!
+- I'll try to get you some help!
+```
+
+Try it in the phone simulator!
+
+But what about "Can you assist me?" For that, let's handle anything the natural language thinks is a call for help, or `smalltalk.agent.can_you_help`.
+
+- Copy this line ...
+
+```
+* ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
+```
+
+- ... and paste it in your "catchall" trigger as the second-to-last line. Like this:
+
+`+ *
+$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
+* ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
+- The action I detect is: ${{result.action}}
+```
+
+We've added an "if-then" statement to the block. It says: If `${{result.action}}` is equal to `smalltalk.agent.can_you_help` then go to a `help` trigger.
+
+See it there?
+
+Try it!
+
+
+
+
 
 ## Pursuing more
 
