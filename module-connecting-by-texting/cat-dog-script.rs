@@ -46,7 +46,7 @@ $ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call
 - Is that a yes or a no? ^buttons("Yes!", "No!")
 
 + openended reset and route
-- Got to here <set openended-type=none> {@ <get openended-next-trigger>}
+- <set openended-type=none> {@ <get openended-next-trigger>}
 
 > object encode_uri javascript
     return encodeURIComponent(args[0])
