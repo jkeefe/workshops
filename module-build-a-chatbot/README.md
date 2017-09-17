@@ -197,14 +197,14 @@ Whew!
 
 ## Better flow
 
-For long answers, you can add "natural" pauses with `<chat>`
+For long answers, you can add "natural" pauses with `<send>`
 
 ```
 + [*] seagulls [*]
-- They're loud think they own the island. <chat>But pretty harmless 
-otherwise. <chat>If you go hiking on the rocks away from the hotel, 
-tho, stay away from the small, gray ones. <chat>Parent gulls have 
-been known to attack people to protect their young! <chat>😯
+- They're loud think they own the island. <send>But pretty harmless 
+otherwise. <send>If you go hiking on the rocks away from the hotel, 
+tho, stay away from the small, gray ones. <send>Parent gulls have 
+been known to attack people to protect their young! <send>😯
 ```
 
 ## Adding fun features
@@ -219,7 +219,7 @@ would you like to know about? ^buttons("Location", "Activities", "Getting There"
 
 ```
 + location
-- It's 10 miles off the coast of Portsmouth, New Hampshire. <chat>Here's
+- It's 10 miles off the coast of Portsmouth, New Hampshire. <send>Here's
  a link to a map: ^link("https://goo.gl/maps/T5qxWXTXLLF2","Star Island Map")
 ```
 
@@ -331,6 +331,45 @@ See it there?
 
 Try it!
 
+Note that anything _other_ than help ends up at the last line, which the bot uses.
+
+### Got nothin'? Use API.ai's answer
+
+Remember when you use API.ai in the testing box and it actually provides an answer? We can use that. It's 
+`${{result.fulfillment.speech}}`. (I know this, because I clicked on the "Show JSON" button in API.ai and can see what would be sent back to our bot!)
+
+So let's replace the last line of our messy code block with that. Instead of 
+
+```
+- The action I detect is: ${{result.action}}
+```
+
+use ...
+
+```
+- ${{result.fulfillment.speech}}
+```
+
+So now your covered ... pretty much.
+
+Only issue remaining is that if the bot doesn't recognize anything it sends back blankness. So let's tweak the final lines in the "catchall" block one last time, pasting in:
+
+```
++ *
+$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
+* <get openended-type> == yesno => {@ handle yesno ${{result.action}} }
+* ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
+* ${{result.fulfillment.speech}} != "" => ${{result.fulfillment.speech}} 
+- Sorry, I have no idea what you just said.
+```
+
+Those last two lines are: If the "speech" line is not equal (`!=`) to blankness (`""`) then respond with the "speech" line.
+
+If not, we get the last line. You can add more of these `-` lines to add variety.
+
+## Starting from scratch?
+
+What we just built is a good starter script, incorporating the natural language processing for catching strangeness and letting you build from scratch. If you'd like to start over, start from this file.
 
 
 
