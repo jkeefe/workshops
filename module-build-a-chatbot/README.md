@@ -2,18 +2,17 @@
 
 ## Introduction
 
-- We're going to make an "Ask me Anything" bot
-- Could be about your project, something you know a lot about, or you
-- Since we're going to be playing with this information, and it could become public, no secret stuff
-- I'll show you how to add it to facebook ... in a bit
+- We're going to make an "Ask me Anything" bot. Think about what you might make a bot to answer about. It should be something you know well. Could be about your project, the project's topic, your company, your favorite book, your favorite place, or you
+- Your bot will eventually become public, so no secret stuff
+- I'll show you how to get it running on Facebook ... in a bit
 
 ## The Bot Engine
 
-- Facebook is only the interface
+- Facebook is only the interface. The bot is built in a bot engine.
 - There are LOTS of bot engines out there
 - (See the post on our Quartz [bot blog](https://bots.qz.com) for a bunch of them.)
 - We're going to use [Dexter](https://rundexter.com)
-- Made for writers. (Point-and-click isn't.)
+- Made for writers. (Point-and-click systems aren't.)
 - Go there and make an account
     - Click "Make your first bot" button (or something similar)
     - Enter your email
@@ -27,10 +26,14 @@
 - Name it as you wish
 - Clear what's there (we'll start from scratch for real)
 
-## Kickoff Welcome
+## Basics
 
-- "get started"
-- Using a language called `RiveScript`
+- Using a language called RiveScript
+
+- `+` is what the human says ... the trigger
+- `-` is what the bot says ... the response
+
+Let's start out with a good introductory phrase. Let people know right away what they'll get from this bot.
 
 ```
 + get started
@@ -38,34 +41,43 @@
 me anything!
 ```
 
+- Try it in the demo phone.
+
 ## Simple Question and Answer
 
-- `+` is what the human says
-- `-` is what the bot says
+Come up with 3-4 questions a human might ask your bot, once it knows what it's about.
+
+- Make all the human questions (the triggers) lowercase
+- In the human questions (triggers) don't use punctuation
 
 ```
-+ Where is Star Island?
++ where is star island
 - It's 10 miles off the coast of Portsmouth, New Hampshire.
 ```
 
 ```
-+ How do you get there?
++ how do you get there
 - Once you get yourself to Portsmouth, you can take one of the
 boats that make regular trips.
 ```
 
 ```
-+ What's on Star Island?
++ whats on star island
 - There's a big, old hotel. Also a marine lab, some tennis courts,
  an old stone chapel and a historical museum. Also lots of seagulls!
 ```
 
-- Try writing 3-4 questions yourself
-- [Writing pause!]
-- Next ... delete all the punctuation in your questions!
-    - Dexter ignores it all, and it can cause confusion
-- Also capitalization doesn't matter.
-- Try it! Now we can test our bot in the "phone" that's on the side of the screen. Try typing your questions.
+```
++ tell me about the seagulls
+- They're loud think they own the island. <send>But pretty harmless 
+otherwise. <send>If you go hiking on the rocks away from the hotel, 
+tho, stay away from the small, gray ones. <send>Parent gulls have 
+been known to attack people to protect their young! <send>😯
+```
+
+Notice here that I added `<send>` to break up a long line of text into separate chat bubbles.
+
+- Try it! Now we can test our bot in the "phone" that's on the side of the screen. Try typing your questions. They must be exact.
 
 ## Fuzzy matching
 
@@ -90,27 +102,20 @@ Even ...
 - It's 10 miles off the coast of Portsmouth, New Hampshire.
 ```
 
-### Anticipating _anything_:
-
-```
-+ (where is|wheres) *
-```
-
-... matches anything that starts with "Where's" or "Where is," followed by some text.
-
-### Anticipating seagulls:
+### Anticipating any mention of seagulls:
 
 Say we want to respond to the word "seagulls" no matter if there's text before or after it. `* seagulls *` won't work, because the bot will  only respond if there's something before and after the word, like "Tell me about seagulls on the island." "Tell me about seagulls" won't match.
 
-So use brackets `[]` to denote optional things:
+So use brackets `[*]` to denote optional things:
 
 ```
 + [*] seagulls [*]
-- They're loud think they own the island. But pretty harmless 
-otherwise. If you go hiking on the rocks away from the hotel, tho, 
-stay away from the small, gray ones. Parent gulls have been known 
-to attack people to protect their young! 😯
+- They're loud think they own the island. <send>But pretty harmless 
+otherwise. <send>If you go hiking on the rocks away from the hotel, 
+tho, stay away from the small, gray ones. <send>Parent gulls have 
+been known to attack people to protect their young! <send>😯
 ```
+
 
 ### A little help
 
@@ -121,7 +126,7 @@ Using brackets, as in the seagull example, is a smart way to catch anyone needin
 - Just type a question, and I'll give it my best shot.
 ```
 
-Also, we probably want to say something nice when we don't understand a question. You can use the "catchall" to match anything that hasn't already matched.
+Also, we probably want to say something nice when there is no match. You can use the "catchall" to match anything that hasn't already matched.
 
 Another nice trick is to add multiple `-` lines. Dexter will randomly pick from among them to reply.
 
@@ -195,26 +200,16 @@ After you are registered as a Facebook developer we need to make that app and th
     
 Whew!
 
-## Better flow
-
-For long answers, you can add "natural" pauses with `<send>`
-
-```
-+ [*] seagulls [*]
-- They're loud think they own the island. <send>But pretty harmless 
-otherwise. <send>If you go hiking on the rocks away from the hotel, 
-tho, stay away from the small, gray ones. <send>Parent gulls have 
-been known to attack people to protect their young! <send>😯
-```
-
 ## Adding fun features
 
-You can encourage your user's path by providing buttons, which show up really nicely in Facebook. Here's how:
+You can -- and should -- guide your user's path by providing buttons, which show up really nicely in Facebook. Here's how:
+
+- Tip! You can insert buttons, links, images, and more using the "+Insert" button at the top of the editing window.
 
 ```
 + get started
 - I'm a bot that can answer your questions about Star Island. What 
-would you like to know about? ^buttons("Location", "Activities", "Getting There")
+would you like to know about? ^buttons("Location", "What's There" "Getting There")
 ```
 
 ```
@@ -224,9 +219,9 @@ would you like to know about? ^buttons("Location", "Activities", "Getting There"
 ```
 
 ```
-+ activities
-- The island is host to family conferences, day visitors, and 
-an annual sailboat race.
++ whats there
+- There's a big, old hotel. Also a marine lab, some tennis courts,
+ an old stone chapel and a historical museum. Also lots of seagulls!
 ```
 
 ```
@@ -234,14 +229,18 @@ an annual sailboat race.
 - The trip aboard the Thomas Leighton takes about an hour from Portsmouth. ^image("http://media.johnkeefe.net/class-modules/boat.jpg")
 ```
 
-- Tip! You can insert buttons, links, images, and more using the "+Insert" button at the top of the editing window.
+- To see these in Facebook Messenger, press the "Publish" button.
+- Then try it in Messenger
 
 ## Make it Public
+
+Nobody but you can see your bot at the moment. Let's fix that!
 
 - Go back to that Facebook tab
 - Click "App Review" in the sidebar
 - Click the big "Make [bot name] Public" switch
 - Some things require review, like broadcasting and ads
+
 
 ## Adding Natural Language Processing
 
@@ -371,13 +370,9 @@ If not, we get the last line. You can add more of these `-` lines to add variety
 
 What we just built is a good starter script, incorporating the natural language processing for catching strangeness and letting you build from scratch. If you'd like to start over, start from this file.
 
-
-
-
 ## Pursuing more
 
 - Dexter documentation is really good
 - Read more about [RiveScript](https://www.rivescript.com/docs/tutorial), the language Dexter uses. (Most, but not all, RiveScript features are available in Dexter.)
-- Natural Language Processing
 
 
