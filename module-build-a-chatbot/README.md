@@ -2,6 +2,7 @@
 
 ## Introduction
 
+- Shortcut to this page: [jkef.me/build-chatbot](http://jkef.me/build-chatbot)
 - We're going to make an "Ask me Anything" bot. Think about what you might make a bot to answer about. It should be something you know well. Could be about your project, the project's topic, your company, your favorite book, your favorite place, or you
 - Your bot will eventually become public, so no secret stuff
 - I'll show you how to get it running on Facebook ... in a bit
@@ -47,8 +48,8 @@ me anything!
 
 Come up with 3-4 questions a human might ask your bot, once it knows what it's about.
 
-- Make all the human questions (the triggers) lowercase
-- In the human questions (triggers) don't use punctuation
+- Make all the human questions (the triggers) **lowercase**
+- In the human questions (triggers) **don't use punctuation**
 
 ```
 + where is star island
@@ -318,7 +319,8 @@ But what about "Can you assist me?" For that, let's handle anything the natural 
 
 - ... and paste it in your "catchall" trigger as the second-to-last line. Like this:
 
-`+ *
+```
++ *
 $ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
 * ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
 - The action I detect is: ${{result.action}}
