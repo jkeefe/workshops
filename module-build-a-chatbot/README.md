@@ -5,27 +5,22 @@
 - Shortcut to this page: [jkef.me/build-chatbot](http://jkef.me/build-chatbot)
 - We're going to make an "Ask me Anything" bot. Think about what you might make a bot to answer about. It should be something you know well. Could be about your project, the project's topic, your company, your favorite book, your favorite place, or you
 - Your bot will eventually become public, so no secret stuff
-- I'll show you how to get it running on Facebook ... in a bit
 
 ## The Bot Engine
 
-- Facebook is only the interface. The bot is built in a bot engine.
-- There are LOTS of bot engines out there
-- (See the post on our Quartz [bot blog](https://bots.qz.com) for a bunch of them.)
-- We're going to use [Dexter](https://rundexter.com)
-- Made for writers. (Point-and-click systems aren't.)
-- Go there and make an account
-    - Click "Make your first bot" button (or something similar)
-    - Enter your email
-    - Pick a password
-    - Click "Signup"
-    - https://rundexter.com/pricing 
-    - $0 for up to 100 users
+Facebook will be our interface. But the bot is built in a bot engine. There are LOTS of bot engines out there, and we're going to use [Dexter](https://rundexter.com), which is what we use for chatbots at Quartz. Dexter is free up to 100 users, so good for experimenting. For bigger projects, check out the [Dexter pricing here](https://rundexter.com/pricing).
+
+- Go to [rundexter.com](http://rundexter.com)
+- Make an account
+- Click "Make your first bot" button (or something similar)
+- Enter your email
+- Pick a password
+- Click "Signup"
 - Click the blue "+ New Bot" button.
-- Click "Blank Project"
-- Click "Create Bot"
 - Name it as you wish
-- Clear what's there (we'll start from scratch for real)
+- For template, Click "Blank Project"
+- Click "Create Bot"
+- Clear out what appeaers (we'll start from scratch for real)
 
 ## Basics
 
@@ -33,20 +28,20 @@
 
 - `+` is what the human says ... the trigger
 - `-` is what the bot says ... the response
+- Note there's a space after the `+` or `-`
 
 Let's start out with a good introductory phrase. Let people know right away what they'll get from this bot.
 
 ```
-+ get started
++ hi
 - I'm a bot that can answer your questions about Star Island. Ask 
 me anything!
 ```
-
 - Try it in the demo phone.
 
 ## Simple Question and Answer
 
-Come up with 3-4 questions a human might ask your bot, once it knows what it's about.
+Come up with three questions a human might ask your bot, once that human knows what your bot is about.
 
 - Make all the human questions (the triggers) **lowercase**
 - In the human questions (triggers) **don't use punctuation**
@@ -65,62 +60,17 @@ boats that make regular trips.
 ```
 + whats on star island
 - There's a big, old hotel. Also a marine lab, some tennis courts,
- an old stone chapel and a historical museum. Also lots of seagulls!
+ an old stone chapel and a historical museum. Also lots of seagulls! They're loud think they own the island. But pretty harmless 
+ otherwise. If you go hiking on the rocks away from the hotel, 
+ tho, stay away from the small, gray ones. Parent gulls have 
+ been known to attack people to protect their young! 😯
 ```
-
-```
-+ tell me about the seagulls
-- They're loud think they own the island. <send>But pretty harmless 
-otherwise. <send>If you go hiking on the rocks away from the hotel, 
-tho, stay away from the small, gray ones. <send>Parent gulls have 
-been known to attack people to protect their young! <send>😯
-```
-
-Notice here that I added `<send>` to break up a long line of text into separate chat bubbles.
 
 - Try it! Now we can test our bot in the "phone" that's on the side of the screen. Try typing your questions. They must be exact.
 
-## Fuzzy matching
-
-Because Dexter is looking for exact matches, there are lots of questions our bots won't answer
-    - Where is it?
-    - What's its location?
-    - What can you do there?
-    
-### Anticipating options:
-
-Group options in parentheses, separated by the `|` symbol (on Macs, it's shift-backslash, over the return key).
-
-```
-+ where is (star island|it|the island)
-- It's 10 miles off the coast of Portsmouth, New Hampshire.
-```
-
-Even ...
-
-```
-+ (where is|wheres) (star island|it|the island)
-- It's 10 miles off the coast of Portsmouth, New Hampshire.
-```
-
-### Anticipating any mention of seagulls:
-
-Say we want to respond to the word "seagulls" no matter if there's text before or after it. `* seagulls *` won't work, because the bot will  only respond if there's something before and after the word, like "Tell me about seagulls on the island." "Tell me about seagulls" won't match.
-
-So use brackets `[*]` to denote optional things:
-
-```
-+ [*] seagulls [*]
-- They're loud think they own the island. <send>But pretty harmless 
-otherwise. <send>If you go hiking on the rocks away from the hotel, 
-tho, stay away from the small, gray ones. <send>Parent gulls have 
-been known to attack people to protect their young! <send>😯
-```
-
-
 ### A little help
 
-Using brackets, as in the seagull example, is a smart way to catch anyone needing help, too: 
+Using a `*` means "anything" and [brackets] means it's optional. So here's a smart way to catch anyone saying the word "help" (with anything or nothing before or after "help"):
 
 ```
 + [*] help [*]
@@ -129,14 +79,14 @@ Using brackets, as in the seagull example, is a smart way to catch anyone needin
 
 Also, we probably want to say something nice when there is no match. You can use the "catchall" to match anything that hasn't already matched.
 
-Another nice trick is to add multiple `-` lines. Dexter will randomly pick from among them to reply.
-
 ```
 + *
 - I'm sorry, I don't understand what you said.
 - If that's a question, I don't know the answer yet.
 - Ooof. I don't understand. Maybe try asking in another way.
 ```
+
+Another nice trick is to add multiple `-` lines. Dexter will randomly pick from among them to reply.
 
 ## Wire up to Facebook
 
@@ -152,7 +102,7 @@ In Facebook, bots live on "pages" you add to your profile.
 - You'll need a Facebook account (look on with someone if you don't have one)
 - Open a new browser tab and log in to [Facebook](https://facebook.com)
 - To make the page ...
-   - Go to https://www.facebook.com/pages/create/
+   - Click "Pages" in your left-hand menu, or go to https://www.facebook.com/pages/create/
    - Make your new page. Don't worry about the pretty details, you can add them later.
    - Once it's made, look in the left column for "About" (you may need to click "see more"). Click on "About"
    - Scroll all the bottom
@@ -165,7 +115,7 @@ In Facebook, bots live on "pages" you add to your profile.
 
 This is a very typical setup: The bot you make needs to connect to a new "app" in the platform you are using, such as Facebook.
 
-![Bot & platform relationship](./bot_platform.png)
+![Bot & platform relationship](./images/bot_platform.png)
 
 The part missing so far is the platform app. To make an app in Facebook, you need to register as a Facebook developer.
 
@@ -181,7 +131,7 @@ After you are registered as a Facebook developer we need to make that app and th
 - On the **Dexter** tab
     - Paste App ID paste into box
 - On the **Facebook** tab 
-    - Get App Secret (you may have to confirm your password)
+    - Get App Secret by clicking "show" (you may have to confirm your password)
 - On the **Dexter** tab
     - Paste into Dexter 
 - Back at the **Facebook** tab ...
@@ -189,17 +139,22 @@ After you are registered as a Facebook developer we need to make that app and th
     - Click "Add Platform" at the bottom
     - Make the site url `https://rundexter.com`
     - CLICK SAVE CHANGES
+    
+Your App should look like this:
+![Facebook App Settings](./images/fb_app_settings.png)
+    
 - Back to the **Dexter** tab
     - Click Next
     - Click Authenticate
     - Agree
     - Click Next
     - Click Deploy
+    - (Do not click Redeploy)
     - Click Next
 - Go to your bot! (Click the link in Dexter)
     - mine is http://m.me/147365322486738
-    
-Whew!
+    - To see your bot work, you need to go back to the Dexter bot page and press the "Publish Topic" button. (You'll need to do this whenever you make changes.)
+    - Then try talking to your bot in Messenger
 
 ## Adding fun features
 
@@ -207,31 +162,45 @@ You can -- and should -- guide your user's path by providing buttons, which show
 
 - Tip! You can insert buttons, links, images, and more using the "+Insert" button at the top of the editing window.
 
+Add buttons ...
+
 ```
-+ get started
++ hi
 - I'm a bot that can answer your questions about Star Island. What 
-would you like to know about? ^buttons("Location", "What's There" "Getting There")
+would you like to know about? ^buttons(Location, Getting There, What's on Star)
 ```
+
+Add a link ...
 
 ```
 + location
-- It's 10 miles off the coast of Portsmouth, New Hampshire. <send>Here's
- a link to a map: ^link("https://goo.gl/maps/T5qxWXTXLLF2","Star Island Map")
+- It's 10 miles off the coast of Portsmouth, New Hampshire. ^link("https://goo.gl/maps/T5qxWXTXLLF2","Star Island Map")
 ```
 
-```
-+ whats there
-- There's a big, old hotel. Also a marine lab, some tennis courts,
- an old stone chapel and a historical museum. Also lots of seagulls!
-```
+Add a picture ...
 
 ```
 + getting there
-- The trip aboard the Thomas Leighton takes about an hour from Portsmouth. ^image("http://media.johnkeefe.net/class-modules/boat.jpg")
+- Once you get yourself to Portsmouth, you can take one of the
+boats that make regular trips ... like the Thomas Laighton ^image("http://media.johnkeefe.net/class-modules/boat.jpg")
 ```
 
-- To see these in Facebook Messenger, press the "Publish" button.
-- Then try it in Messenger
+Add chat timing ... adding `<delay seconds=2>` to break up a long line of text into separate chat bubbles.
+
+```
++ whats on star
+- There's a big, old hotel. Also a marine lab, some tennis courts,
+ an old stone chapel and a historical museum.<delay seconds=2>Also lots of seagulls!<delay seconds=2>They're loud think they own the island. But pretty harmless otherwise. <delay seconds=2> If you go hiking on the rocks away 
+ from the hotel, tho, stay away from the small, gray ones. <delay seconds=2>
+ Parent gulls have been known to attack people to protect their young!<delay seconds=2>😯
+```
+
+And better help ...
+
+```
++ [*] help [*]
+- Here are the things I know how to do. Just pick one! ^buttons(Location, Getting There, What's on Star)
+```
 
 ## Make it Public
 
@@ -241,7 +210,6 @@ Nobody but you can see your bot at the moment. Let's fix that!
 - Click "App Review" in the sidebar
 - Click the big "Make [bot name] Public" switch
 - Some things require review, like broadcasting and ads
-
 
 ## Adding Natural Language Processing
 
