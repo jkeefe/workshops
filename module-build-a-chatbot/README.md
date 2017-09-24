@@ -60,7 +60,8 @@ boats that make regular trips.
 ```
 + whats on star island
 - There's a big, old hotel. Also a marine lab, some tennis courts,
- an old stone chapel and a historical museum. Also lots of seagulls! They're loud think they own the island. But pretty harmless 
+ an old stone chapel and a historical museum. Also lots of seagulls! 
+ They're loud and think they own the island. But pretty harmless 
  otherwise. If you go hiking on the rocks away from the hotel, 
  tho, stay away from the small, gray ones. Parent gulls have 
  been known to attack people to protect their young! 😯
@@ -141,7 +142,7 @@ After you are registered as a Facebook developer we need to make that app and th
     - CLICK SAVE CHANGES
     
 Your App should look like this:
-![Facebook App Settings](./images/fb_app_settings.png)
+![Facebook App Settings](./images/fb_app_setup.png)
     
 - Back to the **Dexter** tab
     - Click Next
@@ -223,6 +224,8 @@ As usual, you'll need to sign up. It's free. And you'll need a Google/Gmail acco
 
 - Click "Sign up for Free"
 - Log in with Google (API.ai is a Google product now)
+- Choose "Create Agent"
+- Name it "Blank agent"
 - In the sidebar, chose "Prebuilt Agents"
 - Then in the main area, find the logo for the "Small Talk" prebuilt agent (Note, this is _not_ the "Small Talk" option in the left-side menu)
 - Just leave the "Link to Google Project" line empty and hit OK
@@ -338,7 +341,7 @@ If not, we get the last line. You can add more of these `-` lines to add variety
 
 ## Starting from scratch?
 
-What we just built is a good starter script, incorporating the natural language processing for catching strangeness and letting you build from scratch. If you'd like to start over, start from this file.
+What we just built is a good starter script, incorporating the natural language processing for catching strangeness and letting you build from scratch. If you'd like to start over, start from [this file](./a-good-start.rs).
 
 ## Pursuing more
 
