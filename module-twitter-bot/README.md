@@ -46,13 +46,14 @@ For several reasons, I don't recommend attaching a bot to your personal Twitter 
 However, to make a new account, you need a phone number where you can get a text today. If the phone number you are going to use is already attached to your personal account, you need to disconnect that number from your original account and use it for the new one. (Don't worry, you can add it back to your original account once the bot is working.)
 
 Here's how: 
-    - Log into your existing account
-    - Click on your small icon in the upper-right corner of the screen
-    - From the dropdown, select "Settings and Privacy"
-    - From the menu on the left, click on "Mobile"
-    - If there's a phone number associated with the account, click "Delete my phone"
-    - Click your small icon in the upper-right corner again
-    - Log out of your existing account
+
+- Log into your existing account
+- Click on your small icon in the upper-right corner of the screen
+- From the dropdown, select "Settings and Privacy"
+- From the menu on the left, click on "Mobile"
+- If there's a phone number associated with the account, click "Delete my phone"
+- Click your small icon in the upper-right corner again
+- Log out of your existing account
     
 ## Making your bot
 
