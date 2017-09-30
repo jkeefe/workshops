@@ -12,19 +12,19 @@
 * <get openended-answer> == no => <set dogvar=no> OK. Do you like cats? <call>await_answer yesno cat-answer</call>
 
 + cat answer
-* <get openended-answer> == yes => {@ combined <get dogvar> yes}
-* <get openended-answer> == no => {@ combined <get dogvar> no}
+* <get openended-answer> == yes => {@ answers <get dogvar> yes}
+* <get openended-answer> == no => {@ answers <get dogvar> no}
 
-+ combined yes yes
++ answers yes yes
 - Both can be truly great pets.
 
-+ combined yes no
++ answers yes no
 - Woof! Dogs are great pets.
 
-+ combined no yes
++ answers no yes
 - Meow! Just remember, dogs have owners. Cats have servants.
 
-+ combined no no
++ answers no no
 - Maybe you're more of a bird person.
 
 + help

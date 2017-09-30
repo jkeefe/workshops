@@ -1,12 +1,42 @@
 # Connecting by Texting
 
-## Pre-requisites
+## Make the dog-cat script in Dexter
 
-- [Build-a-Chatbot](../module-buid-a-chatbot) module
-- [Advanced Dextering](../module-advanced-dextering) module
+We'll walk through making [this script]('./cat-dog-basic.rs').
 
-## Examples
+- `%` trick
+- `<star>`
+- `<formal>`
+- `<call>await_answer yesno dog-answer</call>`
+- If-then: `* <get openended-answer> == yes => <set dogvar=yes> Cool. Do you like cats?`
+- `<set dogvar=yes>`
+- `<get dogvar>`
+- `{@ another trigger}`
 
+Cut and paste in this gnarly code at the very end:
+
+```
+> object encode_uri javascript
+    return encodeURIComponent(args[0])
+< object
+
+// this sets values for the open-ended question
+> object await_answer javascript
+    var user = rs.currentUser();
+    var userdata = rs.getUservars(user);
+    var currenttopic = userdata.topic;
+    var nexttrigger = args[1].replace(/[,!?;:']/g, "").replace(/[-_.]/g," ");
+    
+    rs.setUservar(user, "openended-type", args[0]);
+    rs.setUservar(user, "openended-topic", currenttopic);
+    rs.setUservar(user, "openended-next-trigger", nexttrigger);
+    rs.setUservar(user, "openended-answer", "undefined");
+
+    return;
+< object
+```
+
+Try it!
 
 ## Wire it up to SMS with Twilio
 
@@ -83,64 +113,37 @@ We'll be using [Twilio](http://twilio.com) to make the connection between the te
     - [picture, from email]
     - It'll only work from your personal phone unless/until (or other numbers you authorize) unless/until you upgrade
     
-## SMS Survey with Airtable
+## Add NLP (Optional)
 
-### Prepare Dexter
+Establish account with API.ai if that hasn't happened yet. See [this section](https://github.com/jkeefe/workshops/tree/master/module-build-a-chatbot#adding-natural-language-processing) for details!
 
-Add this to your script:
+Walk through changes in the [cat-dog-nlp](./cat-dog-nlp.rs) script.
 
-```
-> object currentDate javascript
-  return new Date(Date.now()).toLocaleDateString()
-< object
- 
-+ post_results
-$ POST YOUR_AIRTABLE_URL_GOES_HERE {"headers": {"Authorization": "Bearer YOUR_AIRTABLE_API_KEY_GOES_HERE", "Content-Type": "application/json"}, "body": {"fields": {"Time": "<call>currentDate</call>", "User":"<get _platformId>", "Dogs": "<get dogs_answer>", "Cats": "<get cats_answer>" }}}
-* ${{__status}} != 200 => ${{error.message}}
-- See you soon!
-```
 
-Also need to adjust the `+ cat answer` code to set the `catvar` variable. See how we make the change below by adding `<set catvar=yes>` and `<set catvar=no>` below:
+Add the API key for API.ai! 
 
 ```
-+ cat answer
-* <get openended-answer> == yes => <set catvar=yes> {@ combined <get dogvar> yes}
-* <get openended-answer> == no => <set catvar=no> {@ combined <get dogvar> no}
+! var apiai = Bearer YourAPIaiClientAccessTokenGoesHere
 ```
 
-Also, after all four possible answers, we need to send folks to the `post_results` trigger. So add `{@ post_results}` to the end of all four possible answers, like this:
+Update the catchall trigger to:
 
 ```
-+ combined yes yes
-- Both can be truly great pets. {@ post_results}
++ *
+$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
+* <get openended-type> == yesno => {@ handle yesno ${{result.action}} }
+* ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
+* ${{result.fulfillment.speech}} != "" => ${{result.fulfillment.speech}} 
+- Sorry, I have no idea what you just said.
 ```
 
-### Prepare Airtable
+Update the yes/no handler to: 
 
-- Go to airtable.com and sign up for an account.
-    - Use an email address you can verify today
-- Skip the marketing questions
-- Go to your email and verify your account
-- Add a base
-- Start from scratch
-- Call it "My Events"
-- Pick a color and an icon
-- Click on the icon once it's set
-- Clear all of the boxes that come up
-- Edit this so that you have 
-    - Time, User, Dogs, Cats
-    - Make them all "Single line of Text"
-- Open a new tab
-- Go to https://airtable.com/api
-- Find your new "base" and click it
-- OK Look carefully at this. There's a URL in the darker part of this page. You need that URL. It'll look something like `https://api.airtable.com/v0/appn5FegAgnXtr0RG/Table%201`
-- Paste that into your dexter code where it says `YOUR_AIRTABLE_URL_GOES_HERE`
-- Go back to Airtable
-- You need an Airtable API key. Get it by clicking the "account" link in the "Authentication section."
-- Click "Generate an API Key"
-- Copy the key
-- Go back to Dexter and paste it where it says `YOUR_AIRTABLE_API_KEY_GOES_HERE`
-- Try your script in the mock phone.
-- Check your Airtable!
+```
++ handle yesno *
+* <star> == smalltalk.confirmation.yes => <set openended-answer=yes> {@ openended reset and route}
+* <star> == smalltalk.confirmation.no => <set openended-answer=no> {@ openended reset and route}
+- Is that a yes or a no? ^buttons("Yes!", "No!")
+```
 
 

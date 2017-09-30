@@ -1,11 +1,9 @@
-! var apiai = Bearer YourAPIaiClientAccessTokenGoesHere
-
 + (get started|hi|hello)
 - Hi! What's your name? 
 
 + *
 % hi whats your name
-- Hi <formal>. Do you like dogs? <call>await_answer yesno dog-answer</call>
+- Hi <star>. Do you like dogs? <call>await_answer yesno dog-answer</call>
 
 + dog answer
 * <get openended-answer> == yes => <set dogvar=yes> Cool. Do you like cats? <call>await_answer yesno cat-answer</call>
@@ -27,26 +25,27 @@
 + combined no no
 - Maybe you're more of a bird person.
 
-+ help
++ [*] help [*]
 - I'm sorry you're having trouble!
 - I'll try to get you some help!
 
-// the stuff below is some gnarly code. enter with care //
-
 + *
-$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
-* <get openended-type> == yesno => {@ handle yesno ${{result.action}} }
-* ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
-* ${{result.fulfillment.speech}} != "" => ${{result.fulfillment.speech}} 
-- Sorry, I have no idea what you just said.
+* <get openended-type> == yesno => {@ handle yesno <star> }
+- Sorry, I don't know the answer to that.
 
 + handle yesno *
-* <star> == smalltalk.confirmation.yes => <set openended-answer=yes> {@ openended reset and route}
-* <star> == smalltalk.confirmation.no => <set openended-answer=no> {@ openended reset and route}
+* <star> == yes => <set openended-answer=yes> {@ openended reset and route}
+* <star> == y => <set openended-answer=yes> {@ openended reset and route}
+* <star> == si => <set openended-answer=yes> {@ openended reset and route}
+* <star> == no => <set openended-answer=no> {@ openended reset and route}
+* <star> == n => <set openended-answer=no> {@ openended reset and route}
+* <star> == nope => <set openended-answer=no> {@ openended reset and route}
 - Is that a yes or a no? ^buttons("Yes!", "No!")
 
 + openended reset and route
 - <set openended-type=none> {@ <get openended-next-trigger>}
+
+// the stuff below is some gnarly code. enter with care //
 
 > object encode_uri javascript
     return encodeURIComponent(args[0])
