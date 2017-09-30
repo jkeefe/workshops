@@ -20,6 +20,7 @@ We're going to walk through [this bot script](./cat-dog-script.rs).
 ```
 <call>await_answer yesno dog-answer</call>
 ```
+** Teach the simple yes-no first **
 
 ## Adding your API.ai Key
 
