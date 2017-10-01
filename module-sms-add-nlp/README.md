@@ -1,6 +1,6 @@
 # Add natural language processing to the pets bot
     
-This assumes you've made the basic cat-dog SMS bot. If you haven't, head over to the [sms-bot module]('../module-sms-bot').
+This assumes you've made the basic cat-dog SMS bot. If you haven't, head over to the [sms-bot module](../module-sms-bot).
 
 ## Set up API.ai account
 

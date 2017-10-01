@@ -2,7 +2,7 @@
 
 ## Make the dog-cat script in Dexter
 
-We'll walk through making [this script]('./cat-dog-basic.rs').
+We'll walk through making [this script](./cat-dog-basic.rs).
 
 - `%` trick
 - `<star>`
@@ -113,37 +113,3 @@ We'll be using [Twilio](http://twilio.com) to make the connection between the te
     - [picture, from email]
     - It'll only work from your personal phone unless/until (or other numbers you authorize) unless/until you upgrade
     
-## Add NLP (Optional)
-
-Establish account with API.ai if that hasn't happened yet. See [this section](https://github.com/jkeefe/workshops/tree/master/module-build-a-chatbot#adding-natural-language-processing) for details!
-
-Walk through changes in the [cat-dog-nlp](./cat-dog-nlp.rs) script.
-
-
-Add the API key for API.ai! 
-
-```
-! var apiai = Bearer YourAPIaiClientAccessTokenGoesHere
-```
-
-Update the catchall trigger to:
-
-```
-+ *
-$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
-* <get openended-type> == yesno => {@ handle yesno ${{result.action}} }
-* ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
-* ${{result.fulfillment.speech}} != "" => ${{result.fulfillment.speech}} 
-- Sorry, I have no idea what you just said.
-```
-
-Update the yes/no handler to: 
-
-```
-+ handle yesno *
-* <star> == smalltalk.confirmation.yes => <set openended-answer=yes> {@ openended reset and route}
-* <star> == smalltalk.confirmation.no => <set openended-answer=no> {@ openended reset and route}
-- Is that a yes or a no? ^buttons("Yes!", "No!")
-```
-
-

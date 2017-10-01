@@ -2,11 +2,11 @@
 
 ## Prerequisites
 
-Do this section only after you've made the [cat-dog SMS bot]('../module-sms-bot').
+Do this section only after you've made the [cat-dog SMS bot](../module-sms-bot).
 
 ## Prepare Dexter
 
-Add this to the bottom of your [cat-dog]('../module-sms-bot/cat-dog-basic.rs') script:
+Add this to the bottom of your [cat-dog](../module-sms-bot/cat-dog-basic.rs) script:
 
 ```
 > object currentDate javascript
