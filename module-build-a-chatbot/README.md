@@ -37,27 +37,26 @@ Let's start out with a good introductory phrase. Let people know right away what
 - I'm a bot that can answer your questions about Star Island. Ask 
 me anything!
 ```
-- Try it in the demo phone.
+- Try it in the demo phone!
+- Note that if you can't see the demo phone, you may need to close the "helper" box that pops up in the lower right corner first.
 
 ## Simple Question and Answer
 
 Come up with three questions a human might ask your bot, once that human knows what your bot is about.
 
-- Make all the human questions (the triggers) **lowercase**
-- In the human questions (triggers) **don't use punctuation**
+- Make all the human questions (the triggers, or `+` lines ) **lowercase**
+- In the human questions (triggers,  or `+` lines) **don't use punctuation**
+- Put a blank line between each set. See below.
+- Test your questions in the demo phone as you go.
 
 ```
 + where is star island
 - It's 10 miles off the coast of Portsmouth, New Hampshire.
-```
 
-```
 + how do you get there
 - Once you get yourself to Portsmouth, you can take one of the
 boats that make regular trips.
-```
 
-```
 + whats on star island
 - There's a big, old hotel. Also a marine lab, some tennis courts,
  an old stone chapel and a historical museum. Also lots of seagulls! 
@@ -88,6 +87,10 @@ Also, we probably want to say something nice when there is no match. You can use
 ```
 
 Another nice trick is to add multiple `-` lines. Dexter will randomly pick from among them to reply.
+
+## Publish your bot
+
+To get this ready to share (and wire up to Facebook), click the green "Publish Topic" button.
 
 ## Wire up to Facebook
 
@@ -126,6 +129,7 @@ After you are registered as a Facebook developer we need to make that app and th
 
 - Click "Create New App"
 - Give it a name
+- Pick "Messenger" as the product
 - Click on the "settings" at the side
 - On the **Facebook** tab
     - Copy App ID 
@@ -143,7 +147,18 @@ After you are registered as a Facebook developer we need to make that app and th
     
 Your App should look like this:
 ![Facebook App Settings](./images/fb_app_setup.png)
-    
+
+One more Facebook Setting to deal with:
+
+- From the left-hand rail on the Facebook developer page, click `+Add Product`
+- Pick the Facebook Login _icon_
+- Next click the "Facebook Login" _text_ in the left-hand rail
+- Go back to the Dexter tab and copy the "Valid OAuth Redirect URI"
+- Back to Facebook, paste it into the "Valid OAuth Redirect URIs"
+- Click Save Changes
+
+Almost there!
+
 - Back to the **Dexter** tab
     - Click Next
     - Click Authenticate
@@ -153,9 +168,7 @@ Your App should look like this:
     - (Do not click Redeploy)
     - Click Next
 - Go to your bot! (Click the link in Dexter)
-    - mine is http://m.me/147365322486738
-    - To see your bot work, you need to go back to the Dexter bot page and press the "Publish Topic" button. (You'll need to do this whenever you make changes.)
-    - Then try talking to your bot in Messenger
+- Then try talking to your bot in Messenger
 
 ## Adding fun features
 
@@ -203,27 +216,36 @@ And better help ...
 - Here are the things I know how to do. Just pick one! ^buttons(Location, Getting There, What's on Star)
 ```
 
+## Share it with others
+
+You can allow other individual Facebook users to play with your bot. Just add them as "Testers":
+
+- Go back to that Facebook tab
+- Click "Roles"
+- Click "Add Testers"
+- Add people!
+
 ## Make it Public
 
-Nobody but you can see your bot at the moment. Let's fix that!
+To make the bot open to _anyone_ you need to make it public _and_ get Facebook's approval. For the little things we're doing (no broadcasts, no ads), you can expect to have it approved within 1-2 days.
 
 - Go back to that Facebook tab
 - Click "App Review" in the sidebar
 - Click the big "Make [bot name] Public" switch
-- Some things require review, like broadcasting and ads
+- Click "Submit for Review"
 
 ## Adding Natural Language Processing
 
-### Introduction to API.ai
+### Introduction to ~~API.ai~~ Dialogflow
 
-There are lots of tools out there to use. We'll play with [API.ai](https://api.ai).
+There are lots of tools out there to use. We'll play with [Dialogflow](https://dialogflow.com) (which used to be called API.ai ... so there may be some notations here that still reference that).
 
 ### Setup
 
 As usual, you'll need to sign up. It's free. And you'll need a Google/Gmail account.
 
 - Click "Sign up for Free"
-- Log in with Google (API.ai is a Google product now)
+- Log in with Google (Dialogflow is a Google product)
 - Choose "Create Agent"
 - Name it "Blank agent"
 - In the sidebar, chose "Prebuilt Agents"
@@ -245,7 +267,7 @@ Also try things that might be casual synonyms for "yes" and "no."
 
 ### Connect it to your Dexter Bot
 
-- On the API.ai settings page, copy the "Client Access Token"
+- On the Dialogflow settings page, copy the "Client Access Token"
 - Switch to your Dexter bot
 - Paste the "Client Access Token" at the very top of your bot script.
 - In front of the token, add `! var apiai = Bearer ` so it looks something this:
@@ -307,7 +329,7 @@ Note that anything _other_ than help ends up at the last line, which the bot use
 
 ### Got nothin'? Use API.ai's answer
 
-Remember when you use API.ai in the testing box and it actually provides an answer? We can use that. It's 
+Remember when you use Dialogflow in the testing box and it actually provides an answer? We can use that. It's 
 `${{result.fulfillment.speech}}`. (I know this, because I clicked on the "Show JSON" button in API.ai and can see what would be sent back to our bot!)
 
 So let's replace the last line of our messy code block with that. Instead of 
