@@ -131,9 +131,5 @@ If not, we get the last line. You can add more of these `-` lines to add variety
 
 What we just built is a good starter script, incorporating the natural language processing for catching strangeness and letting you build from scratch. If you'd like to start over, start from [this file](./a-good-start.rs).
 
-## Pursuing more
-
-- Dexter documentation is really good
-- Read more about [RiveScript](https://www.rivescript.com/docs/tutorial), the language Dexter uses. (Most, but not all, RiveScript features are available in Dexter.)
 
 
