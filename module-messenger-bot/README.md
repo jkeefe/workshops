@@ -2,7 +2,6 @@
 
 ## Introduction
 
-- Shortcut to this page: [jkef.me/build-chatbot](http://jkef.me/build-chatbot)
 - We're going to make an "Ask me Anything" bot. Think about what you might make a bot to answer about. It should be something you know well. Could be about your project, the project's topic, your company, your favorite book, your favorite place, or you
 - Your bot will eventually become public, so no secret stuff
 

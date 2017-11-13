@@ -2,7 +2,7 @@
 
 ## NOTE: Looking for Messenger Bots?
 
-**This module used to outline building a Facebook Messenger bot, but now builds a simpler, web-based bot. If you're looking to build a Messenger Bot, head over to the [messenger bot module](../module-messenger-bot).** 
+**This module originally described building a Facebook Messenger bot. But there's an easier way to get started, which this now outlines. If you're intent on building a Facebook Messenger Bot, head over to the [messenger bot module](../module-messenger-bot).** 
 
 ## Introduction
 
@@ -94,85 +94,28 @@ Another nice trick is to add multiple `-` lines. Dexter will randomly pick from 
 
 ## Publish your bot
 
-To get this ready to share (and wire up to Facebook), click the green "Publish Topic" button.
+To get this ready to share, click the green "Publish Topic" button.
 
-## Wire up to Facebook
+## Put it on the web
 
 Dexter is great about walking you through this entire process, under the "Platforms" button. 
 
 - To start, click on the "Platforms" button.
-- Choose Facebook.
+- Choose Website.
+- Click the large block of code in the middle of the screen. It'll get copied to the clipboard.
 
-### Setting up your Facebook Page
+![Click on web block](./images/web_code.png)
 
-In Facebook, bots live on "pages" you add to your profile.
+We're going to put this code onto the web using a paste service. 
 
-- You'll need a Facebook account (look on with someone if you don't have one)
-- Open a new browser tab and log in to [Facebook](https://facebook.com)
-- To make the page ...
-   - Click "Pages" in your left-hand menu, or go to https://www.facebook.com/pages/create/
-   - Make your new page. Don't worry about the pretty details, you can add them later.
-   - Once it's made, look in the left column for "About" (you may need to click "see more"). Click on "About"
-   - Scroll all the bottom
-   - Highlight and copy the "Page Id"
-   - Go back to the Dexter tab
-- Paste the ID number into the box
-- Click "Next"
-
-### Setting up your Facebook Bot App
-
-This is a very typical setup: The bot you make needs to connect to a new "app" in the platform you are using, such as Facebook.
-
-![Bot & platform relationship](./images/bot_platform.png)
-
-The part missing so far is the platform app. To make an app in Facebook, you need to register as a Facebook developer.
-
-- Go to Facebook [developer portal](https://developers.facebook.com/apps/) and follow the instructions.  
-
-After you are registered as a Facebook developer we need to make that app and then make a connection between the bot settings and the app settings.
-
-- Click "Create New App"
-- Give it a name
-- Pick "Messenger" as the product
-- Click on the "settings" at the side
-- On the **Facebook** tab
-    - Copy App ID 
-- On the **Dexter** tab
-    - Paste App ID paste into box
-- On the **Facebook** tab 
-    - Get App Secret by clicking "show" (you may have to confirm your password)
-- On the **Dexter** tab
-    - Paste into Dexter 
-- Back at the **Facebook** tab ...
-    - App Domains, put `rundexter.com`
-    - Click "Add Platform" at the bottom
-    - Make the site url `https://rundexter.com`
-    - CLICK SAVE CHANGES
-    
-Your App should look like this:
-![Facebook App Settings](./images/fb_app_setup.png)
-
-One more Facebook Setting to deal with:
-
-- From the left-hand rail on the Facebook developer page, click `+Add Product`
-- Pick the Facebook Login _icon_
-- Next click the "Facebook Login" _text_ in the left-hand rail
-- Go back to the Dexter tab and copy the "Valid OAuth Redirect URI"
-- Back to Facebook, paste it into the "Valid OAuth Redirect URIs"
-- Click Save Changes
-
-Almost there!
-
-- Back to the **Dexter** tab
-    - Click Next
-    - Click Authenticate
-    - Agree
-    - Click Next
-    - Click Deploy
-    - (Do not click Redeploy)
-    - Click Next
-- Go to your bot! (Click the link in Dexter)
-- Then try talking to your bot in Messenger
+- Go to [pste.eu](http://pste.eu).
+- Click into the big box.
+- Paste the code into the box.
+- Hit "Submit"
+- You'll get private link. Click it!
+- It looks like you now have a blank screen, but click the icon in the lower-right corner.
+- Your chat bot will appear!
+- Try it!
 
 ## Adding fun features
 
@@ -222,152 +165,9 @@ And better help ...
 
 ## Share it with others
 
-You can allow other individual Facebook users to play with your bot. Just add them as "Testers":
+You can allow other people to try your bot by giving them your _pste.eu_ link. 
 
-- Go back to that Facebook tab
-- Click "Roles"
-- Click "Add Testers"
-- Add people!
-
-## Make it Public
-
-To make the bot open to _anyone_ you need to make it public _and_ get Facebook's approval. For the little things we're doing (no broadcasts, no ads), you can expect to have it approved within 1-2 days.
-
-- Go back to that Facebook tab
-- Click "App Review" in the sidebar
-- Click the big "Make [bot name] Public" switch
-- Click "Submit for Review"
-
-## Adding Natural Language Processing
-
-### Introduction to ~~API.ai~~ Dialogflow
-
-There are lots of tools out there to use. We'll play with [Dialogflow](https://dialogflow.com) (which used to be called API.ai ... so there may be some notations here that still reference that).
-
-### Setup
-
-As usual, you'll need to sign up. It's free. And you'll need a Google/Gmail account.
-
-- Click "Sign up for Free"
-- Log in with Google (Dialogflow is a Google product)
-- Choose "Create Agent"
-- Name it "Blank agent"
-- In the sidebar, chose "Prebuilt Agents"
-- Then in the main area, find the logo for the "Small Talk" prebuilt agent (Note, this is _not_ the "Small Talk" option in the left-side menu)
-- Just leave the "Link to Google Project" line empty and hit OK
-- Wait and then click "Proceed to Agent"
-- This is tricky ... now in the _drop-down_ menu, chose "Small-Talk." Again, not the "Small Talk" item that's always in the sidebar. Look for the hyphen in `Small-Talk`. That's the right one.
-- Now, to end this craziness, let's rename it. Click the gear next to `Small-Talk` (with the hyphen)
-- Call it "My-Workshop-Bot"
-- Click "Save"
-
-### Play a little
-
-Find the "Try it now" box at the top and try typing some random phrases that might constitute small talk. What happens?
-
-Pay close attention to the "Intent" and "Action" areas.
-
-Also try things that might be casual synonyms for "yes" and "no."
-
-### Connect it to your Dexter Bot
-
-- On the Dialogflow settings page, copy the "Client Access Token"
-- Switch to your Dexter bot
-- Paste the "Client Access Token" at the very top of your bot script.
-- In front of the token, add `! var apiai = Bearer ` so it looks something this:
-
-```
-! var apiai = Bearer ab12cd34ef56ab78cd90ef12
-```
-
-- Copy the code below and paste it to the bottom of your bot script:
-
-```
-+ *
-$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
-- The action I detect is: ${{result.action}}
-
-> object encode_uri javascript
-    return encodeURIComponent(args[0])
-< object
-```
-
-- OK! Now try saying some things into the sample phone on the Dexter console.
-
-### Handle calls for help
-
-Let's be sure that whenever someone says help, they get a kind response:
-
-```
-+ help
-- I'm sorry you're having trouble!
-- I'll try to get you some help!
-```
-
-Try it in the phone simulator!
-
-But what about "Can you assist me?" For that, let's handle anything the natural language thinks is a call for help, or `smalltalk.agent.can_you_help`.
-
-- Copy this line ...
-
-```
-* ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
-```
-
-- ... and paste it in your "catchall" trigger as the second-to-last line. Like this:
-
-```
-+ *
-$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
-* ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
-- The action I detect is: ${{result.action}}
-```
-
-We've added an "if-then" statement to the block. It says: If `${{result.action}}` is equal to `smalltalk.agent.can_you_help` then go to a `help` trigger.
-
-See it there?
-
-Try it!
-
-Note that anything _other_ than help ends up at the last line, which the bot uses.
-
-### Got nothin'? Use API.ai's answer
-
-Remember when you use Dialogflow in the testing box and it actually provides an answer? We can use that. It's 
-`${{result.fulfillment.speech}}`. (I know this, because I clicked on the "Show JSON" button in API.ai and can see what would be sent back to our bot!)
-
-So let's replace the last line of our messy code block with that. Instead of 
-
-```
-- The action I detect is: ${{result.action}}
-```
-
-use ...
-
-```
-- ${{result.fulfillment.speech}}
-```
-
-So now your covered ... pretty much.
-
-Only issue remaining is that if the bot doesn't recognize anything it sends back blankness. So let's tweak the final lines in the "catchall" block one last time, pasting in:
-
-```
-+ *
-$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
-* <get openended-type> == yesno => {@ handle yesno ${{result.action}} }
-* ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
-* ${{result.fulfillment.speech}} != "" => ${{result.fulfillment.speech}} 
-- Sorry, I have no idea what you just said.
-```
-
-Those last two lines are: If the "speech" line is not equal (`!=`) to blankness (`""`) then respond with the "speech" line.
-
-If not, we get the last line. You can add more of these `-` lines to add variety.
-
-## Starting from scratch?
-
-What we just built is a good starter script, incorporating the natural language processing for catching strangeness and letting you build from scratch. If you'd like to start over, start from [this file](./a-good-start.rs).
+(Also you may want to bookmark it at this point.)
 
 ## Pursuing more
 
