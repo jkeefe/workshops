@@ -8,7 +8,7 @@ Short link to this module: [jkef.me/make-twitter-bot](http://jkef.me/make-twitte
 
 Get your creativity rolling. There are a few possibilities for the bot program we're using, but for now pick one of these two:
 
-* **Every Bot** - This will tweet out every row in a spreadsheet. Great if you have a lot of data you want to tweet for fun. Good examples are:
+* **Every Row Bot** - This will tweet out every row in a spreadsheet. Great if you have a lot of data you want to tweet for fun. Good examples are:
     - Old French Crime [@OldFrenchCrime](https://twitter.com/oldfrenchcrime)
     - American Injuries [@usinjuries](https://twitter.com/usinjuries)
     
