@@ -21,7 +21,7 @@ Facebook will be our interface. But the bot is built in a bot engine. There are 
 - Pick a password
 - Click "Signup"
 - Click the blue "+ New Bot" button.
-- Name it as you wish
+- Name it as you wish (but don't use quotes or apostrophes)
 - For template, Click "Blank Project"
 - Click "Create Bot"
 - Clear out what appeaers (we'll start from scratch for real)
