@@ -88,9 +88,9 @@ You'll need to create an "app" within your new Twitter account. The bot connects
 - Note ... this isn't in the instructions, but you also need to do:
     - Click on "Keys and Access Tokens" tab
     - Scroll down the page ... you'll see another section about "Access Tokens"
-    - In the "Token Access" box, click the button that reads "Regenerate my Access Token and Token Secret"
+    - In the "Application Actions" box, click the button that reads "Create Access Token and Token Secret"
     - Reload this page
-    - Make sure that in the two places on this page that now say "Access Level" both have "Read and write" after them. If they don't, you may need to do "Regenerate my Access Token and Token Secret" until "read-only" becomes "read and write."
+    - Make sure that in the Application Settings under "Access Level" it says "Read and write" after them. If it doesn't, "Regenerate my Access Token and Token Secret" until "read-only" becomes "read and write."
 
 ### Step 4: Generate a preview.
 
@@ -110,7 +110,7 @@ You'll need to create an "app" within your new Twitter account. The bot connects
     - If you get a red message saying something failed, it is very likely that your Consumer Key and Consumer Secret aren't matching with Twitter. Be **sure** there are no spaces before/after these in the spreadsheet.
 - You'll get a pop-up with a link. Click that.
 - You'll get an authorization page from Twitter. Click Authorize.
-- Wait for the message that says you can "close this window" and close that tab.
+- Wait for the message that says you can "close this window" and DON'T CLOSE close that tab, even though it says you should.
 - Back at the spreadsheet close the pop-up with the link.
 - From the "Bot" menu, click "Send a Test Tweet" again. The bot should tweet! Check your account.
 - **If the bot does not tweet** ...
@@ -119,11 +119,13 @@ You'll need to create an "app" within your new Twitter account. The bot connects
         - Go back to https://apps.twitter.com
         - Click on your app
         - Click on "Keys and Access Tokens" tab
-        - Scroll down the page ... you'll see another section about "Access Tokens"
-        - In the "Token Access" box, click the button that reads "Regenerate my Access Token and Token Secret"
+        - Under "Application Actions"" box, click the button that reads "Regenerate my Access Token and Token Secret"
         - Reload this page
-        - Make sure that in the two places on this page that now say "Access Level" both have "Read and write" after them. If they don't, you may need to do "Regenerate my Access Token and Token Secret" until "read-only" becomes "read and write."
-        - Then repeat Step 5
+        - Go back to your spreadsheet and from the "Bot" drop-down menu, pick "Revoke Twitter Authorization"
+        - From the Twitter tab, Get the new Consumer Key and Consumer Secret
+        - In the Spreadsheet tab put in those values
+        - From spreadsheet menu, Bot -> Send Test Tweet
+        - Authorize and LEAVE TAB OPEN
     - If the first line in the log includes the words "Service not authorized" or "expired token":
         - Repeat Step 5
     
