@@ -11,14 +11,18 @@ There are lots of tools out there to use. We'll play with [Dialogflow](https://d
 As usual, you'll need to sign up. It's free. And you'll need a Google/Gmail account.
 
 - Click "Sign up for Free"
-- Log in with Google (Dialogflow is a Google product)
-- Choose "Create Agent"
+- Log in with Google (Dialogflow is a Google product).
+- Choose "Create Agent" -- and you may need to authenticate with Google again here.
 - Name it "Blank agent"
+- Click "Create"
+- If you don't see a sidebar on the left side, click the menu icon (the three horizontal lines)
 - In the sidebar, chose "Prebuilt Agents"
 - Then in the main area, find the logo for the "Small Talk" prebuilt agent (Note, this is _not_ the "Small Talk" option in the left-side menu)
+- Click "Import" inside this Small Talk box.
 - Just leave the "Link to Google Project" line empty and hit OK
 - Wait and then click "Proceed to Agent"
-- This is tricky ... now in the _drop-down_ menu, chose "Small-Talk." Again, not the "Small Talk" item that's always in the sidebar. Look for the hyphen in `Small-Talk`. That's the right one.
+- If you don't see a sidebar on the left side, click the menu icon (the three horizontal lines)
+- This is tricky ... At the top of the sidebar, use the _drop-down_ menu to chose "Small-Talk." Again, not the "Small Talk" item that's always in the sidebar. Look for the hyphen in `Small-Talk`. That's the right one.
 - Now, to end this craziness, let's rename it. Click the gear next to `Small-Talk` (with the hyphen)
 - Call it "My-Workshop-Bot"
 - Click "Save"
@@ -46,7 +50,7 @@ Also try things that might be casual synonyms for "yes" and "no."
 
 ```
 + *
-$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
+$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<get _platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
 - The action I detect is: ${{result.action}}
 
 > object encode_uri javascript

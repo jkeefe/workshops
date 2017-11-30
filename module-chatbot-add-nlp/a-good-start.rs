@@ -10,7 +10,7 @@
 // the stuff below is some gnarly code. enter with care //
 
 + *
-$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
+$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<get _platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
 * ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
 * ${{result.fulfillment.speech}} != "" => ${{result.fulfillment.speech}} 
 - Sorry, I have no idea what you just said.
