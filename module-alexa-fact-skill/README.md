@@ -2,12 +2,27 @@
 
 Making a simple Alexa fact skill with Dexter, in the spirit of "[Cat Facts](https://www.amazon.com/deegles-co-Cat-Facts/dp/B017OBJI46)."
 
-## Write your script in Dexter.
+## Get started with Dexter
 
-- Build a dexter bot
+- Go to [rundexter.com](http://rundexter.com)
+- Make an account
+- Click "Make your first bot" button (or something similar)
+- Enter your email
+- Pick a password
+- Click "Signup"
+- Click the blue "+ New Bot" button.
+- Name it as you wish (but don't use quotes or apostrophes)
+- For template, Click "Blank Project"
+- Click "Create Bot"
+- Clear out what appeaers (we'll start from scratch for real
+
+You can keep going to play with the Alexa skill-building, but if you're new to Dexter, you can get the basics and build your first chatbot by [heading over here](https://github.com/jkeefe/workshops/tree/master/module-build-a-chatbot).)
+
+## Start a  Dexter.
+
 - Make the first trigger "launchrequest" and provide a friendly introduction.
 - Make the second trigger "factlist" and provide a list of facts. Remember, if there are multiple responses beginning with `-`, one will be picked at random.
-- Here's an example:
+- Here's an example you can just copy-and-paste into your Dexter bot script:
 
 ```
 + launchrequest
@@ -39,6 +54,7 @@ So:
 - The pirate Blackbeard visited once and is said to have left both treasure and his wife on the neighboring island. {@ farewell}
 ```
 
+- The full script is here.
 - Click "Publish Topic" to make sure your edits stick!
 
 ## Wiring up Alexa

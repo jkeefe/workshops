@@ -12,7 +12,7 @@
 
 ## The Bot Engine
 
-Facebook will be our interface. But the bot is built in a bot engine. There are LOTS of bot engines out there, and we're going to use [Dexter](https://rundexter.com), which is what we use for chatbots at Quartz. Dexter is free up to 100 users, so good for experimenting. For bigger projects, check out the [Dexter pricing here](https://rundexter.com/pricing).
+There are LOTS of bot engines out there, and we're going to use [Dexter](https://rundexter.com), which is what we use for chatbots at Quartz. Dexter is free up to 100 users, so good for experimenting. For bigger projects, check out the [Dexter pricing here](https://rundexter.com/pricing).
 
 - Go to [rundexter.com](http://rundexter.com)
 - Make an account
