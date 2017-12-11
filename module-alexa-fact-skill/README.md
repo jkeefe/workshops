@@ -18,10 +18,10 @@ Making a simple Alexa fact skill with Dexter, in the spirit of "[Cat Facts](http
 
 You can keep going to play with the Alexa skill-building, but if you're new to Dexter, you can get the basics and build your first chatbot by [heading over here](https://github.com/jkeefe/workshops/tree/master/module-build-a-chatbot).)
 
-## Start a  Dexter.
+## Make a Dexter Bot Script
 
-- Make the first trigger "launchrequest" and provide a friendly introduction.
-- Make the second trigger "factlist" and provide a list of facts. Remember, if there are multiple responses beginning with `-`, one will be picked at random.
+- Make the first trigger `+ launchrequest` and provide a friendly introduction. This will be the entry point for your bot script.
+- Make the second trigger `+ factlist` and provide a list of facts. Remember, if there are multiple responses beginning with `-`, one will be picked at random.
 - Here's an example you can just copy-and-paste into your Dexter bot script:
 
 ```
@@ -54,15 +54,15 @@ So:
 - The pirate Blackbeard visited once and is said to have left both treasure and his wife on the neighboring island. {@ farewell}
 ```
 
-- The full script is here.
-- Click "Publish Topic" to make sure your edits stick!
+- You can also check out my [full example script](https://github.com/jkeefe/workshops/blob/master/module-alexa-fact-skill/alexa-example.rs).
+- Click the "Publish Topic" button to make sure your edits stick!
 
 ## Wiring up Alexa
 
 - Chose "Platforms" from the menu at the top of the screen
 - Chose "Alexa"
 - In the instructions, follow the link to the "Amazon Developer Console."
-- If you're not yet an Amazon developer, click the button to creatue your Amazon Developer Account
+- If you're not yet an Amazon developer, click the button to create your Amazon Developer Account
     - Provide the information requested
     - NOTE! If you have an Amazon Alexa device already, it's a lot easier down the road if you use the Amazon account (and email address) associated with that device.
 - Log into your Amazon Developer Account
@@ -85,28 +85,28 @@ So:
 - Click Next
 
 Follow the Dexter instructions to fill out the next fields:
-    - Intent Schema: Use the Dexter code
-    - Custom Slot types ...
-        - Enter Type: `catchall`
-        - Enter Values: copy and paste the list of apparently random words from Dexter
-            - Click ADD
-        - Sample Utterances: `CatchAllIntent {CatchAll}`
-    - Click Save
+- Intent Schema: Use the Dexter code
+- Custom Slot types ...
+    - Enter Type: `catchall`
+    - Enter Values: copy and paste the list of apparently random words from Dexter
+        - Click ADD
+    - Sample Utterances: `CatchAllIntent {CatchAll}`
+- Click Save
     
 You'll need to wait for a little bit for the model to be created.
 
-    - Click Next
+- Click Next
 
 On the configuration page:
 
-    - Pick "HTTPS"
-    - Go back to dexter and get the "Webhook URL" and pasted it into the Alexa "Default" box
-    - Click Next
+- Pick "HTTPS"
+- Go back to dexter and get the "Webhook URL" and pasted it into the Alexa "Default" box
+- Click Next
     
 On the SSL Certificate page, pick:
 
-    - `My development endpoint is a sub-domain of a domain that has a wildcard certificate from a certificate authority`
-    - Click SAVE then NEXT
+- `My development endpoint is a sub-domain of a domain that has a wildcard certificate from a certificate authority`
+- Click SAVE then NEXT
     
 On the Test page, make sure the skill is "Enabled"
 
