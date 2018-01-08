@@ -1,4 +1,4 @@
-# Building Bots: Work to explore before week 1
+# Building Bots: Materials to explore before week 1
 
 Before we get started, it's a good idea to get yourself familiar with some bots!
 
