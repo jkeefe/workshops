@@ -4,12 +4,12 @@ Before we get started, it's a good idea to get yourself familiar with some bots!
 
 ## Watch
 
-- Watch instructor [John Keefe's bot overview](https://www.youtube.com/watch?list=PLCiLMV8uFnO7TAxadc-5XyWx2EoxM76YE&v=vu3wG-BY5PY), at the Journalism Interactive conference in October 2017.
+- Watch instructor John Keefe's [bot overview](https://www.youtube.com/watch?list=PLCiLMV8uFnO7TAxadc-5XyWx2EoxM76YE&v=vu3wG-BY5PY), at the Journalism Interactive conference in October 2017.
 
 ## Read
 
-- [We found the best tool for building chat bots](https://bots.qz.com/1360/we-found-the-best-tool-for-building-chat-bots/) by Quartz's Emily Withrow
-- [I talked to lots of bots. Here's what made some better than others.](https://bots.qz.com/50/seeking-good-and-bad-bot-behavior/)
+- [We found the best tool for building chat bots](https://bots.qz.com/1360/we-found-the-best-tool-for-building-chat-bots/) by Quartz's Emily Withrow.
+- [I talked to lots of bots. Here's what made some better than others.](https://bots.qz.com/50/seeking-good-and-bad-bot-behavior/) also by Quartz's Emily Withrow.
 
 ## Try
 
