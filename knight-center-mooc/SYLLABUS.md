@@ -22,7 +22,7 @@ This course requires that you have a computer with an Internet browser. All work
 
 - Dexter, a bot platform we'll be using to build our bots: https://rundexter.com
 - Dialogflow, a natural language processor. The service is at https://dialogflow.com, but you log in using a Google account. If you don't have a Google account, sign up for one at https://accounts.google.com/
-- Twilio, for SMS texting. Sign up for a free account at http://twilio.com (don't enter any credit card info; you don't need to pay for anything).
+- Twilio, for SMS texting. Sign up for a free trial account at http://twilio.com (don't enter any credit card info; you don't need to pay for anything). Also you will need access to a mobile phone where you can get and send text messages.
 - Airtable, an online spreadsheet service Sign up at https://airtable.com
 - Amazon Developer Account, for building a voice with Amazon Alexa. Sign up for free at https://developer.amazon.com/. You don't need an Alexa-enabled device for the class; you can hear what Alexa would say in your web browser. But is definitely more fun if you have one or [purchase one](http://amzn.to/2CO2fSu) before the third week in class. If you do, sign up for the developer account with the same email you use to set up your Alexa device.
 - Facebook account, for building a Facebook messenger bot. https://facebook.com
