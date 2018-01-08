@@ -1,6 +1,4 @@
-# Course Syllabus
-
-**Building Bots: Software You Talk With**
+# Building Bots: Software You Talk With
 
 Course Dates: February 5 - March 2, 2018
 
