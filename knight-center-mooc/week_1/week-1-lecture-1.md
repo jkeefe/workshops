@@ -2,19 +2,19 @@
 
 - Software you can talk with
     - Text messages
-        - LIke Note to Self’s Infomagical project
+        - Like Note to Self’s Infomagical project
         - Electionland’s voting-problem reporting project
-    - Alexa
-        - Open cat facts
-        - Get information (bitcoin price)
+
     - Facebook Messenger
+        - CNN
         - Try ABC News Australia https://www.messenger.com/t/abcnews.au
         - Try poncho … say I’m hungry! https://www.messenger.com/t/hiponcho
-        - Try https://messenger.com/qzy … say “bread”
+        - Try https://messenger.com/qzy … say “bread” or "st"
+    - Alexa
+        - Open cat facts
+        - Flash briefing
 
 - Intro to Dexter
-    - https://rundexter.com
-    - Check out https://bots.qz.com/1360/we-found-the-best-tool-for-building-chat-bots/
     - Go to [rundexter.com](http://rundexter.com)
     - Make an account
     - Click "Make your first bot" button (or something similar)
