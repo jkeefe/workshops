@@ -27,19 +27,30 @@ Also try things that might be casual synonyms for "yes" and "no."
 
 ## Update your Dexter bot
 
-Let's bring that functionality to your cat-dog bot.
-
-In your cat-dog script, we'll be updating the basic script to end up like this [cat-dog-nlp](./cat-dog-nlp.rs) script.
-
-Update the catchall trigger to:
 
 ```
 + *
+% do you like dogs
 $ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
-* <get openended-type> == yesno => {@ handle yesno ${{result.action}} }
-* ${{result.action}} == smalltalk.agent.can_you_help => {@ help}
+* ${{result.action}} == smalltalk.confirmation.yes => <set dogvar=yes> Do you like cats?
+* ${{result.action}} == smalltalk.confirmation.no => <set dogvar=no> Do you like cats?
+
++ *
+% do you like cats
+$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
+* ${{result.action}} == smalltalk.confirmation.yes =>  <set catvar=yes> {@ answered <get dogvar> <get catvar>}
+* ${{result.action}} == smalltalk.confirmation.no => <set catvar=no> {@ answered <get dogvar> <get catvar>}
+
++ *
+$ GET https://api.api.ai/v1/query?v=20150910&query=<call>encode_uri <star></call>&lang=en&sessionId=<_platformId> {"headers":{"Content-Type":"application/json", "Authorization": "<bot apiai>"}}
 * ${{result.fulfillment.speech}} != "" => ${{result.fulfillment.speech}} 
 - Sorry, I have no idea what you just said.
+
+> object encode_uri javascript
+    return encodeURIComponent(args[0])
+< object
+
+! var apiai = Bearer putyourapikeyhere
 ```
 
 Update the yes/no handler to: 
