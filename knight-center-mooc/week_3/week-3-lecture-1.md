@@ -1,2 +1,71 @@
 # Make an SMS bot
 
+## Sign up for Twilio
+
+- Open a new browser tab
+- Go to [Twilio](http://twilio.com)
+- "Sign up" to make a free trial account.
+    - Use: SMS
+    - Project: SMS Surveys
+    - Language: node.js
+    - Under 10,000 uses per month
+- Enter the number of the cell phone you have with you
+    - This will only be used for verification
+    - You won't (and, in fact, can't) "send" from your personal number
+    - Can check the box to avoid being called
+- Enter verifcation number
+- "Get a Number"
+- "Choose this number"
+    - Mine is (347) 768-7183
+    - AKA +13477687183
+- Trial account set up!
+    - Your trial account has $14.50 remaining
+    - Trial accounts can only send messages to verified numbers in these countries
+    - Messages sent in trial will begin with "Sent from a Twilio Trial Account"
+    - While you have a trial account, you're limited to one Twilio number
+    
+## Wire to Dexter
+
+- With your dog-cat script visible, click the "Platforms" button on top.
+- Choose "Twilio SMS" on the left side
+- We did Step 1!
+    - Click "Next"
+- Step 2: Link phone number
+    - Go back to the Twilio tab and copy your new Twilio phone number
+    - Go to the Dexter tab and paste your new Twilio phone number in the box on this page.
+    - Phone number should begin with `1` (or your country code) without the `+` sign.
+    - Phone number shouldn't have spaces.
+    - So like this: `13477687183`
+- Step 3: Link Twilio Credentials
+    - Go to the Twilio Tab
+    - Find the Twilio Dashboard, which you get to with the icon at the top of the lefthand column.
+    - Copy the Account SID
+    - Go to Dexter and paste it in the proper box
+    - Go back to Twilio
+    - Click the "eye" icon to show the Auth Token
+    - Copy taht
+    - Go to Dexter and paste it in the proper box
+    - Click "Next"
+- Step 4: Webhook from Dexter to Twilio
+    - Click in the "Webhook URL" box to copy it to your clipboard
+    - Go to Twilio
+    - Click on "Phone numbers" (Not "Buy a Number")
+    - Click on your new Twilio phone number, which is in red
+    - Look carefully for the field called "When a Message Comes In"
+    - Delete what's currently in that box
+    - Paste the webhook from your clipboard into that box
+    - Click "Save"
+- Step 5: Deploy!
+    - Go back to the Dexter Tab
+    - Click "Next"
+    - Click "Deploy"
+    - Click "Next"
+- Publish your Bot
+    - Click "Edit" at the top of the Dexter page to go back to your script
+    - Click "Publish Topic"
+- Call your bot!
+    - Text "hi" to your new Twilio phone number
+- Did it work?
+    - It'll have "Sent from your Twilio trial account" on every message
+    - [picture, from email]
+    - It'll only work from your personal phone unless/until (or other numbers you authorize) unless/until you upgrade
