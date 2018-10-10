@@ -2,6 +2,8 @@
 
 This module adds Natural Language Processing to either the [web-based](../module-build-a-chatbot) or [Facebook Messenger](../module-messenger-bot) chatbots.
 
+Shorlink to this page: [jkef.me/add-nlp](https://jkef.me/add-nlp)
+
 ## Introduction to ~~API.ai~~ Dialogflow
 
 There are lots of tools out there to use. We'll play with [Dialogflow](https://dialogflow.com) (which used to be called API.ai ... so there may be some notations here that still reference that).
