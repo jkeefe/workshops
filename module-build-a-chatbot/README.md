@@ -17,14 +17,13 @@ There are LOTS of bot engines out there, and we're going to use [Dexter](https:/
 - Go to [rundexter.com](http://rundexter.com)
 - Make an account
 - Click "Make your first bot" button (or something similar)
-- Enter your email
+- Enter your info
 - Pick a password
-- Click "Signup"
-- Click the blue "+ New Bot" button.
-- Name it as you wish (but don't use quotes or apostrophes)
-- For template, Click "Blank Project"
+- Click "Sign up for free"
+- Click the green "+" button.
+- For theme, Click "Blank Project"
 - Click "Create Bot"
-- Clear out what appeaers (we'll start from scratch for real)
+- Clear out what appears in the center window (we'll start from scratch for real)
 
 ## Basics
 
@@ -42,7 +41,7 @@ Let's start out with a good introductory phrase. Let people know right away what
 me anything!
 ```
 - Try it in the demo phone!
-- Note that if you can't see the demo phone, you may need to close the "helper" box that pops up in the lower right corner first.
+- Note that if you can't see the demo phone, you may need to scroll down.
 
 ## Simple Question and Answer
 
@@ -94,26 +93,33 @@ Another nice trick is to add multiple `-` lines. Dexter will randomly pick from 
 
 ## Publish your bot
 
-To get this ready to share, click the green "Publish Topic" button.
+To get this ready to share, click the green "Publish Current Topic" buttons.
 
 ## Put it on the web
 
-Dexter is great about walking you through this entire process, under the "Platforms" button. 
+Dexter is great about walking you through this entire process. 
 
-- To start, click on the "Platforms" button.
-- Choose Website.
-- Click the large block of code in the middle of the screen. It'll get copied to the clipboard.
+- To start, click on little paper airplane at the top of the screen.
+- Click the "Get Started" button.
+- Click the large block of code, called the "Embed Code," in the middle of the screen. It'll get copied to the clipboard.
 
 ![Click on web block](./images/web_code.png)
+
+- Scroll down and flip the little switch under "Enable Auto Open."
+
+![Enable Auto Open](./images/enable_auto_open.png)
+
+- Scroll up and flip the little switch at the top from "Undeployed" to "Deployed."
+
+![Deployed](./images/deployed.png)
 
 We're going to put this code onto the web using a paste service. 
 
 - Go to [pste.eu](http://pste.eu).
 - Click into the big box.
-- Paste the code into the box.
+- Paste the code from your clipboard into the box.
 - Hit "Submit"
 - You'll get private link. Click it!
-- It looks like you now have a blank screen, but click the icon in the lower-right corner.
 - Your chat bot will appear!
 - Try it!
 
@@ -121,7 +127,7 @@ We're going to put this code onto the web using a paste service.
 
 You can -- and should -- guide your user's path by providing buttons, which show up really nicely in Facebook. Here's how:
 
-- Tip! You can insert buttons, links, images, and more using the "+Insert" button at the top of the editing window.
+- Tip! You can insert buttons, links, images, and more using the gray icons atop the editing window.
 
 Add buttons ...
 
@@ -130,6 +136,8 @@ Add buttons ...
 - I'm a bot that can answer your questions about Star Island. What 
 would you like to know about? ^buttons(Location, Getting There, What's on Star)
 ```
+
+**Important note:** For the buttons to work, their names must match triggers elsewhere in the script! And those triggers, like all triggers, must be all lowercase and contain no punctuation. Someone clicking a button is actually treated as through they had _typed_ the words inside the button.
 
 Add a link ...
 
@@ -173,5 +181,6 @@ You can allow other people to try your bot by giving them your _pste.eu_ link.
 
 - Dexter documentation is really good
 - Read more about [RiveScript](https://www.rivescript.com/docs/tutorial), the language Dexter uses. (Most, but not all, RiveScript features are available in Dexter.)
+- If you'd like to add language recognition -- so triggers don't have to be typed exactly -- check out my [workshop on adding natural language processing](https://github.com/jkeefe/workshops/tree/master/module-chatbot-add-nlp).
 
 
