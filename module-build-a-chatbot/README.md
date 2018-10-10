@@ -103,11 +103,11 @@ Dexter is great about walking you through this entire process.
 - Click the "Get Started" button.
 - Click the large block of code, called the "Embed Code," in the middle of the screen. It'll get copied to the clipboard.
 
-![Click on web block](./images/web_code.png)
+![Click on web block](./images/web_code2.png)
 
 - Scroll down and flip the little switch under "Enable Auto Open."
 
-![Enable Auto Open](./images/enable_auto_open.png)
+![Enable Auto Open](./images/enable_auto_open2.png)
 
 - Scroll up and flip the little switch at the top from "Undeployed" to "Deployed."
 
