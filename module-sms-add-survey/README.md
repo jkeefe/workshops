@@ -13,7 +13,7 @@ Add this to the bottom of your [cat-dog](../module-sms-bot/cat-dog-basic.rs) scr
   return new Date(Date.now()).toLocaleDateString()
 < object
  
-+ post_results
++ post results
 $ POST YOUR_AIRTABLE_URL_GOES_HERE {"headers": {"Authorization": "Bearer YOUR_AIRTABLE_API_KEY_GOES_HERE", "Content-Type": "application/json"}, "body": {"fields": {"Time": "<call>currentDate</call>", "User":"<get _platformId>", "Dogs": "<get dogvar>", "Cats": "<get catvar>" }}}
 * ${{__status}} != 200 => ${{error.message}}
 - See you soon!

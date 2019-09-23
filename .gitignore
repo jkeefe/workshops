@@ -29,3 +29,10 @@ Temporary Items
 # Node Dependencies 
 # (use npm install to load them instead, or see readme)
 node_modules
+
+
+# Jupyter notebook checkpoint folders
+.ipynb_checkpoints
+
+# Unzipped files
+__MACOSX
