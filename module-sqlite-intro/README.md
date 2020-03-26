@@ -2,7 +2,17 @@
 
 A little workshop to learn and tinker with SQL.
 
-## Let's get some dog data
+## Database & Client
+
+- Database holds your data
+    - Often it's on a server somewhere (you'll need a username & password)
+    - SQLite is in a file on your computer
+- Client is how you send SQL queries to look at it
+    - Simplest is the command line
+    - Also applications like Sequel Pro, Workbench, etc
+- You need to _connect_ your client to your database
+
+## Let's see some dog data
 
 - Let's look at a [CSV of 81,000 NYC dogs](https://docs.google.com/spreadsheets/d/1dvL1vq4YTG4Y72XHlWvwTg27f1k3UVnXDZfJm5MHef8/edit?usp=sharing)
 
@@ -26,6 +36,10 @@ Note about the `.data` directory: This is a great place to store data. It doesn'
 - Check out if everything worked by typing: `.schema doginfo`
 - Jump back out of CSV mode: `.mode columns`
 - Turn on headers: `.headers on`
+
+### If you get kicked out ...
+
+Just press the up-arrow key ⬆️ until you see `sqlite dogs.db` again and hit enter.
 
 ### A little bit of SQL
 
