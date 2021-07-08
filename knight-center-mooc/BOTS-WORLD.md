@@ -24,7 +24,7 @@ For the class, we'll be using Dialogflow in English. As long as you are comforta
 
 ### Twilio
 
-[Twilio](https://twilio.com) is a communications service we'll use for SMS texting during the first half of the thrid week.
+[Twilio](https://twilio.com) is a communications service we'll use for SMS texting during the first half of the third week.
 
 The world of SMS is a crazy web of services and phone carriers, so your experience outside of North America could be tricky. That said, I've used the examples in this class in several countries, and with people who have phones from many countries.
 
