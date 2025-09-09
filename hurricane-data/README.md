@@ -38,6 +38,10 @@ I made the this map using Mapshaper.org and Datawrapper. Details are at the bott
 
 ### New Data Products
 
+#### Warnings by county
+
+During an active hurricane threatening the U.S., the hurricane center provides maps of watches and warnings by county, not just the shorelines.
+
 #### Rip currents
 
 Main [website](https://www.nhc.noaa.gov/templates/graphics_ripCurrents_inc.shtml) and latest map.
@@ -46,11 +50,9 @@ Main [website](https://www.nhc.noaa.gov/templates/graphics_ripCurrents_inc.shtml
 - [One-day](https://www.nhc.noaa.gov/gis/rip_currents/rip_currents_day1_latest.geojson) forecast
 - [Two-day](https://www.nhc.noaa.gov/gis/rip_currents/rip_currents_day2_latest.geojson) forecast
 
-#### Warnings by county
+Pause to show how to very quickly make a current rip-currents map with Datawrapper.
 
-![warnings by county](./images/warnings_screenshot.png)
-
-## Pervious Storms
+## Previous Storms
 
 ### Hurricane tracks archive
 
