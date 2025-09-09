@@ -107,7 +107,11 @@ Hurricane experts repeatedly tell us that, at this point, any notion of where a 
 
 I used the files located in the [examples/kiko](examples/kiko) folder of this repository.
 
-### Damaging winds
+### Building the damaging winds file
+
+Note that these files start as "shapefiles," which are actually a collection of files. To make sure Mapshaper gets all the data it needs, be sure to select all of the shape's files (they all have the same name, with different extentions), and drag them together into Mapshaper:
+
+![selecting all of the files](images/select_files.png)
 
 - Opened [mapshaper.org](https://mapshaper.org)
 - Dragged all of the `_wsp50knt120hr_5km` files from the example folder Mapshaper to the main window
@@ -119,7 +123,7 @@ I used the files located in the [examples/kiko](examples/kiko) folder of this re
 - Used the Export button
 - Saved as Geojson
 
-### Forecast points
+### Building the forecast points file
 
 - Reload [mapshaper.org](https://mapshaper.org)
 - Dragged all of the `_5day_pts` files to the main window
