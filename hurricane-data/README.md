@@ -21,7 +21,7 @@ Also, maybe:
 
 - National Hurricane Center [main page](https://www.nhc.noaa.gov/)
 - The [CurrentStorms](https://www.nhc.noaa.gov/CurrentStorms.json) json file.
-- Example NHC data in this repository's [/examples](https://github.com/jkeefe/workshops/blob/master/weather-newsrooms/examples) folder.
+- Example NHC data in this repository's [examples/kiko](examples/kiko) folder.
   - `wsp34knt120hr_5km.shp`: the 5-day chances of 34-knot (tropical storm) winds
   - `wsp50knt120hr_5km.shp`: the 5-day chances of 50-knot ("damaging") winds
   - `wsp50knt120hr_5km.shp`: the 5-day chances of 64-knot (hurricane-force) winds
