@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE metadata SYSTEM "http://www.fgdc.gov/metadata/fgdc-std-001-1998.dtd"><metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin>National Hurricane Center</origin>
+<pubdate>September 08, 2025</pubdate>
+<title>EP112025-034_5day_pts</title>
+<geoform>vector digital data</geoform>
+<onlink>http://www.nhc.noaa.gov/gis</onlink>
+</citeinfo>
+</citation>
+<descript>
+<abstract>The NHC official track forecast points in shapefile format is an experimental product 
+that the National Hurricane Center is testing during the 2009 hurricane season.  
+
+The points represent the official NHC forecast locations of the center of a tropical cyclone.  
+Forecast center positions are given for projections valid 12, 24, 36, 48, 72, 96, and 120 h after the 
+forecast's nominal initial time, provided that a closed surface wind circulation is expected to 
+exist at the forecast projection time.  It is important to remember that tropical cyclone track 
+forecasts are subject to error, and that the effects of a tropical cyclone can span many hundreds 
+of miles from the center.
+</abstract>
+<purpose>The points represent the official NHC forecast locations of the center of a tropical cyclone.</purpose>
+</descript>
+<timeperd>
+<timeinfo>
+<sngdate>
+<caldate>250908/1500</caldate>
+</sngdate>
+</timeinfo>
+<current>Forecast Advisory Date/Time</current>
+</timeperd>
+<status>
+<progress>Complete</progress>
+<update>None planned</update>
+</status>
+<spdom>
+<bounding>
+<westbc>
+-140.0</westbc>
+<eastbc>
+0.0</eastbc>
+<northbc>
+60.0</northbc>
+<southbc>
+0.0</southbc>
+</bounding>
+</spdom>
+<keywords>
+<theme>
+<themekt>None</themekt>
+<themekey>Hurricane</themekey>
+<themekey>Hurricane Track</themekey>
+<themekey>Tropical Storm</themekey>
+<themekey>Subtropical Storm</themekey>
+<themekey>Subtropical Depression</themekey>
+<themekey>Tropical Disturbance</themekey>
+<themekey>Tropical Wave</themekey>
+<themekey>Tropical Low</themekey>
+<themekey>Remnant Low</themekey>
+<themekey>Extratropical Storm</themekey>
+<themekey>Major Hurricane</themekey>
+<themekey>Tropical Cyclone</themekey>
+<themekey>Subtropical Cyclone</themekey>
+</theme>
+<place>
+<placekt>None</placekt>
+<placekey>United States</placekey>
+<placekey>Atlantic</placekey>
+<placekey>North Atlantic Basin</placekey>
+<placekey>Gulf of Mexico</placekey>
+<placekey>Caribbean Sea</placekey>
+<placekey>Pacific Islands</placekey>
+<placekey>Eastern Norht Pacific Basin</placekey>
+</place>
+</keywords>
+<accconst>None</accconst>
+<useconst>None. Acknowledgement of the National Oceanic and Atmospheric Administration, National Weather Service, National Centers for Environmental Prediction or the National Hurricane Center would be appreciated in products derived from these data.</useconst>
+<ptcontac>
+<cntinfo>
+<cntperp>
+<cntper>GIS POC</cntper>
+<cntorg>National Hurricane Center / Technical Support Branch</cntorg>
+</cntperp>
+<cntaddr>
+<addrtype>physical address</addrtype>
+<address>11691 SW 17th St.</address>
+<city>Miami</city>
+<state>FL</state>
+<postal>33165</postal>
+<country>USA</country>
+</cntaddr>
+</cntinfo>
+</ptcontac>
+</idinfo>
+<spdoinfo>
+<direct>Vector</direct>
+<ptvctinf>
+<sdtsterm>
+<sdtstype>Entity point</sdtstype>
+<ptvctcnt>14</ptvctcnt>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<spref>
+<horizsys>
+<geograph>
+<latres>0.1</latres>
+<longres>0.1</longres>
+<geogunit>Decimal degrees</geogunit>
+</geograph>
+<geodetic>
+<horizdn>D_Sphere</horizdn>
+<ellips>Sphere</ellips>
+<semiaxis>6371200.000000</semiaxis>
+<denflat>infinity</denflat>
+</geodetic>
+</horizsys>
+</spref>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>
+EP112025-034_5day_pts</enttypl>
+</enttyp>
+<attr>
+<attrlabl>FID</attrlabl>
+<attrdef>Internal feature number.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+<udom>Sequential unique whole numbers that are automatically generated.</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>Shape</attrlabl>
+<attrdef>Feature geometry.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+<udom>Coordinates defining the features.</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>STORMNAME</attrlabl>
+<attrdef>The name given to each tropical cyclone for which the National Hurricane Center is writing forecast advisories.</attrdef>
+</attr>
+<attr>
+<attrlabl>STORMTYPE</attrlabl>
+<attrdef>The category of the tropical cyclone according to the initial intensity</attrdef>
+<attrdomv>
+<edom>
+<edomv>TD</edomv>
+<edomvd>Tropical Depression</edomvd>
+</edom>
+<edom>
+<edomv>TS</edomv>
+<edomvd>Tropical Storm</edomvd>
+</edom>
+<edom>
+<edomv>HU</edomv>
+<edomvd>Hurricane</edomvd>
+</edom>
+<edom>
+<edomv>SS</edomv>
+<edomvd>Subtropical Storm</edomvd>
+</edom>
+<edom>
+<edomv>SD</edomv>
+<edomvd>Subtropical Depression</edomvd>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>ADVDATE</attrlabl>
+<attrdef>The date in which an advisory is issued in yymmdd/hhmm format</attrdef>
+</attr>
+<attr>
+<attrlabl>ADVISNUM</attrlabl>
+<attrdef>The sequential numbering of forecast advisories for each tropical cyclone</attrdef>
+</attr>
+<attr>
+<attrlabl>STORMNUM</attrlabl>
+<attrdef>The sequential numbering of tropical cyclones for a specific forecast basin according to when the first advisory is issued</attrdef>
+</attr>
+<attr>
+<attrlabl>FCSTPRD</attrlabl>
+<attrdef>The time interval for which the forecast of a tropical cyclone is provided in graphical format</attrdef>
+<attrdomv>
+<edom>
+<edomv>72</edomv>
+<edomvd>72 hour forecast</edomvd>
+</edom>
+<edom>
+<edomv>120</edomv>
+<edomvd>120 hour forecast</edomvd>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>BASIN</attrlabl>
+<attrdef>the ocean where the tropical cyclone is located</attrdef>
+<attrdomv>
+<edom>
+<edomv>al</edomv>
+<edomvd>Atlantic</edomvd>
+</edom>
+<edom>
+<edomv>ep</edomv>
+<edomvd>East Pacific</edomvd>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>LAT</attrlabl>
+<attrdef>distance north or south from the equator of the center of the tropical cyclone (decimal degrees)</attrdef>
+</attr>
+<attr>
+<attrlabl>LON</attrlabl>
+<attrdef>distance east or west on the earth's surface from the prime meridian at Greenwich, England of the center of the tropcical cyclone (decimal degrees)</attrdef>
+</attr>
+<attr>
+<attrlabl>VALIDTIME</attrlabl>
+<attrdef>The time in which a forecast or warning is in effect, until it is updated or superseded by a new forecast issuance.  The format of the valid time is dd/hhmm.</attrdef>
+</attr>
+<attr>
+<attrlabl>TAU</attrlabl>
+<attrdef>number of hours from the forecast valid time for which a forecast is made</attrdef>
+</attr>
+<attr>
+<attrlabl>MAXWIND</attrlabl>
+<attrdef>the highest 1-minute average wind (at an elevation of 10 meters without an unobstructed exposure) associated with a tropical cyclone at a particular point in time (knots)</attrdef>
+</attr>
+<attr>
+<attrlabl>GUST</attrlabl>
+<attrdef>a rapid fluctuation of wind speed with variations of 10 knots or more between peaks and lulls (knots)</attrdef>
+</attr>
+<attr>
+<attrlabl>MSLP</attrlabl>
+<attrdef>the estimated sea level pressure at the center of a tropical cyclone (the lowest pressure in the system in Millibars)</attrdef>
+</attr>
+<attr>
+<attrlabl>TCDIR</attrlabl>
+<attrdef>the best estimate of the direction that the center of a tropical cyclone is moving towards (degrees)</attrdef>
+</attr>
+<attr>
+<attrlabl>TCSPD</attrlabl>
+<attrdef>the best estimate of the speed in which the center of a tropical cyclone is moving (knots)</attrdef>
+</attr>
+<attr>
+<attrlabl>TCDVLP</attrlabl>
+<attrdef>The Tropical Cyclone Development Label (TCDVLP) indicates the category of the tropical cyclone according to both the initial and the forecast intensity  </attrdef>
+<attrdomv>
+<edom>
+<edomv>Tropical Depression</edomv>
+</edom>
+<edom>
+<edomvd>Tropical Storm</edomvd>
+</edom>
+<edom>
+<edomvd>Hurricane</edomvd>
+</edom>
+<edom>
+<edomvd>Subtropical Storm</edomvd>
+</edom>
+<edom>
+<edomvd>Subtropical Depression</edomvd>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>DVLBL</attrlabl>
+<attrdef>The Development Label represents the category of the tropical cyclone according to the forecast intensity</attrdef>
+<attrdomv>
+<edom>
+<edomv>M</edomv>
+<edomvd>Major Hurricane with Sustained Wind &gt; 111 mph</edomvd>
+</edom>
+<edom>
+<edomv>H</edomv>
+<edomvd>Hurricane with Sustained Wind 74-111 mph</edomvd>
+</edom>
+<edom>
+<edomv>S</edomv>
+<edomvd>Tropical Storm with Sustained Wind 39-73 mph</edomvd>
+</edom>
+<edom>
+<edomv>D</edomv>
+<edomvd>Tropcical Depression with Sustained Wind &gt; 39 mph</edomvd>
+</edom>
+<edom>
+<edomv>L</edomv>
+<edomvd>Remnant Low with Sustained Wind &lt; 39 mph</edomvd>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>DATELBL</attrlabl>
+</attr>
+<attr>
+<attrlabl>TIMEZONE</attrlabl>
+</attr>
+<attr>
+<attrlabl>STORMSRC</attrlabl>
+<attrdef>Indicates the type of tropical cyclone: Extratropical or Tropical</attrdef>
+<attrdomv>
+<edom>
+<edomv>Extratropical Cyclone</edomv>
+</edom>
+<edom>
+<edomv>Tropical Cyclone</edomv>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>SSNUM</attrlabl>
+<attrdef>The Saffir-Simpson Hurricane Wind Scale is a 1 to 5 categorization based on the hurricane's intensity at the indicated time. The scale provides examples of the type of damage and impacts in the United States associated with winds of the indicated intensity.</attrdef>
+<attrdomv>
+<edom>
+<edomv>1</edomv>
+<edomvd>Very dangerous winds will produce some damage (74-95 mph)</edomvd>
+</edom>
+<edom>
+<edomv>2</edomv>
+<edomvd>Extremely dangerous winds will cause extensive damage (96 - 110 mph)</edomvd>
+</edom>
+<edom>
+<edomv>3</edomv>
+<edomvd>Devastating damage will occur (111 - 130 mph)</edomvd>
+</edom>
+<edom>
+<edomv>4</edomv>
+<edomvd>Catastrophic damage will occur (131 - 155 mph)</edomvd>
+</edom>
+<edom>
+<edomv>5</edomv>
+<edomvd>Catastrophic damage will occur &gt; 155 mph</edomvd>
+</edom>
+</attrdomv>
+</attr>
+</detailed>
+</eainfo>
+<distinfo>
+<resdesc>Downloadable Data</resdesc>
+<distliab>No responsibility is assumed by the National Oceanic and Atmospheric Administration in the use of these data.</distliab>
+<stdorder>
+<digform>
+<digtinfo>
+<transize> </transize>
+</digtinfo>
+</digform>
+</stdorder>
+</distinfo>
+<metainfo>
+<metd>September 08, 2025</metd>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>National Hurricane Center</cntorg>
+<cntper>GIS POC</cntper>
+</cntorgp>
+<cntpos>Technical Support Branch</cntpos>
+<cntaddr>
+<addrtype>physical address</addrtype>
+<address>11691 SW 17th St.</address>
+<city>Miami</city>
+<state>FL</state>
+<postal>33178</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>305-229-4400</cntvoice>
+</cntinfo>
+</metc>
+<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+<mettc>local time</mettc>
+<metextns>
+<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+<metprof>ESRI Metadata Profile</metprof>
+</metextns>
+</metainfo>
+</metadata>

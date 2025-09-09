@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE metadata SYSTEM "http://www.fgdc.gov/metadata/fgdc-std-001-1998.dtd"><metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin>National Hurricane Center</origin>
+<pubdate>09-08-2025</pubdate>
+<title>2025090812_wsp50knt120hr_5km</title>
+<geoform>vector digital data</geoform>
+<onlink>http://www.nhc.noaa.gov/gis</onlink>
+</citeinfo>
+</citation>
+<descript>
+<abstract>The 50 knot, 120 hour cumulative wind speed probabilities show 
+probabilities of sutained (1-minute average) surface (10-meter altitude) wind
+speeds equal to or exceeding 50 kt...58 mph (tropical storm force) at
+a regulary spaced (5 km) grid of points.  The cumulative periods
+begin at the start ofthe forecast period and extend through the entire
+5-day forecat period from 0-120 hours.
+
+This shapefile was created by interpolating the requlary spaced 1/2 detree grid of 
+points into a regularly spaced 5 km grid of points.
+</abstract>
+<purpose>
+
+These data are intended for geographic display and analysis at the national level 
+and for large regional areas.  The data should be displayed and analyzed at scales 
+appropriate for 1:2,000,000-scale data.  No responsibility is assumed by the National 
+Oceanic and Atmospheric Administration in the use of these data.
+</purpose>
+</descript>
+<timeperd>
+<timeinfo>
+<sngdate>
+<caldate>250908/1200</caldate>
+</sngdate>
+</timeinfo>
+<current></current>
+</timeperd>
+<status>
+<progress>Complete</progress>
+<update>None planned</update>
+</status>
+<spdom>
+<bounding>
+<westbc>180</westbc>
+<eastbc>180</eastbc>
+<northbc>-90</northbc>
+<southbc>90</southbc>
+</bounding>
+</spdom>
+<keywords>
+<theme>
+<themekt>None</themekt>
+<themekey>Wind Radii</themekey>
+<themekey>Wind Swath</themekey>
+<themekey>Hurricane</themekey>
+<themekey>Hurricane Track</themekey>
+<themekey>Tropical Storm</themekey>
+<themekey>Subtropical storm</themekey>
+<themekey>Subtropical depression</themekey>
+<themekey>Tropical disturbance</themekey>
+<themekey>Tropical Wave</themekey>
+<themekey>Tropical low</themekey>
+<themekey>Extratropical storm</themekey>
+<themekey>Major hurricane</themekey>
+<themekey>Tropical cyclone</themekey>
+<themekey>Subtropical cyclone</themekey>
+</theme>
+<place>
+<placekt>None</placekt>
+<placekey>United States</placekey>
+<placekey>Atlantic</placekey>
+<placekey>North Atlantic Basin</placekey>
+<placekey>Gulf of Mexico</placekey>
+<placekey>Caribbean Sea</placekey>
+<placekey>Pacific Islands</placekey>
+<placekey>Eastern North Pacific Basin</placekey>
+</place>
+</keywords>
+<accconst>None</accconst>
+<useconst>None. Acknowledgement of the National Oceanic and Atmospheric Administration, National Weather Service, National Centers for Environmental Prediction or the National Hurricane Center would be appreciated in products derived from these data.</useconst>
+<ptcontac>
+<cntinfo>
+<cntperp>
+<cntper>GIS POC</cntper>
+<cntorg>National Hurricane Center / Technical Support Branch</cntorg>
+</cntperp>
+<cntaddr>
+<addrtype>physical address</addrtype>
+<address>11691 SW 17th St.</address>
+<city>Miami</city>
+<state>FL</state>
+<postal>33165</postal>
+<country>USA</country>
+</cntaddr>
+</cntinfo>
+</ptcontac>
+</idinfo>
+<spdoinfo>
+<direct>Vector</direct>
+<ptvctinf>
+<sdtsterm>
+<sdtstype>Entity point</sdtstype>
+<ptvctcnt></ptvctcnt>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<spref>
+<horizsys>
+<geograph>
+<latres>0.1</latres>
+<longres>0.1</longres>
+<geogunit>Decimal degrees</geogunit>
+</geograph>
+<geodetic>
+<horizdn>D_Sphere</horizdn>
+<ellips>Sphere</ellips>
+<semiaxis>6371200.000000</semiaxis>
+<denflat>infinity</denflat>
+</geodetic>
+</horizsys>
+</spref>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>
+*NAM*</enttypl>
+</enttyp>
+<attr>
+<attrlabl>FID</attrlabl>
+<attrdef>Internal feature number.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+<udom>Sequential unique whole numbers that are automatically generated.</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>Shape</attrlabl>
+<attrdef>Feature geometry.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+<udom>Coordinates defining the features.</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>PWIND120</attrlabl>
+<attrdef>The 120 hour cumulative probability of surface (10-meter altitude) wind speeds in percent between 0 and 100.
+</attrdef>
+</attr>
+</detailed>
+</eainfo>
+<distinfo>
+<resdesc>Downloadable Data</resdesc>
+<distliab>No responsibility is assumed by the National Oceanic and Atmospheric Administration in the use of these data.</distliab>
+<stdorder>
+<digform>
+<digtinfo>
+<transize></transize>
+</digtinfo>
+</digform>
+</stdorder>
+</distinfo>
+<metainfo>
+<metd>09-08-2025</metd>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>National Hurricane Center</cntorg>
+<cntper>GIS POC</cntper>
+</cntorgp>
+<cntpos>Technical Support Branch</cntpos>
+<cntaddr>
+<addrtype>physical address</addrtype>
+<address>11691 SW 17th St.</address>
+<city>Miami</city>
+<state>FL</state>
+<postal>33178</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>305-229-4400</cntvoice>
+</cntinfo>
+</metc>
+<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+<mettc>local time</mettc>
+<metextns>
+<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+<metprof>ESRI Metadata Profile</metprof>
+</metextns>
+</metainfo>
+</metadata>
