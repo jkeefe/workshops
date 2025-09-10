@@ -2,6 +2,8 @@
 
 _Information to accompany my presentation at the Online News Association's ONA25 conference in New Orleans on September 10, 2025._
 
+Here are the [presentation slides](ONA25_Hurricane_Data_by_John_Keefe.pdf) for that talk.
+
 ## There's a new hurricane. Now what?
 
 Expect lots of interest, before it ever reaches land.
