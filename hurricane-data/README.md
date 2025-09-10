@@ -30,13 +30,11 @@ Also, maybe:
   - Items in the "best track" folder are detail of where the storm _already has been_
 - Models `https://web.uwm.edu/hurricane-models/models/{stormId}.kml` where `stormId` is a Hurricane Center ID in lower case like `ep112025`.
 
-## Using this data to make maps
+### Model tracks, strengths and other storm details
 
-I made the this map using Mapshaper.org and Datawrapper. Details are at the bottom of this page.
+- Tomer Burg's [tropical cyclone pages](https://www.polarwx/tropical/)
 
-![Hurricane Kiko](images/GU1hb-hurricane-kiko-expected-to-pass-north-of-hawaii.png)
-
-### New Data Products
+### New NHC Data Products
 
 #### Warnings by county
 
@@ -80,7 +78,37 @@ Important note! This system will only show hurricanes that were one of those cat
 - [Model plot documentation](https://tropycal.github.io/tropycal/api/generated/tropycal.realtime.RealtimeStorm.plot_ensembles.html)
 - Collab notebook tk tk
 
-## NYT Examples
+## Using this data to make maps
+
+### Let's make a rip-current map
+
+![Rip current risk map](images/rm3PU-rip-current-risk.png)
+
+- Download the current rip-current data:
+  - Go to [bit.ly/rip-current-data](https://bit.ly/rip-current-data) (aka www.nhc.noaa.gov/gis/rip_currents/rip_currents_composite_latest.geojson)
+  - Right-click on what your browser shows and save that file as `ripdata.json`
+  - Go to [Datawrapper](https://www.datawrapper.de/)
+  - Log in or make a free account
+  - Click on Dashboard
+  - Pick Create new ... Map
+  - Pick Locator map
+  - Toggle the "Import line and area markers" switch
+  - Drag your `ripdata.json` file to the white "Drop or paste" box
+  - Click on "Area Marker 1" and make its fill opacity 100% and turn off outline
+  - Drag "Area Marker 3" above "Area Marker 2" and make its color Orange (instead of yellow) and fill opacity 100% and turn off outline
+  - Click on "Area Marker 2" and make its color yellow and fill opacity 100% and turn off outline
+  - On the map, zoom into someplace on the U.S. East Coast
+  - Click on Annotate and Layout at the top
+  - Toggle on the "Show Key" switch
+  - Pick "List"
+  - Rename the legend items
+  - Cross-check against the high/low/moderate zones [here](https://www.nhc.noaa.gov/templates/graphics_ripCurrents_inc.shtml), remembering that we've changed yellow to orange and gray to yellow
+
+I made the this map using Datawrapper, Mapshaper.org and the files in the [examples](examples/kiko) folder here. Details are at the bottom of this page.
+
+![Hurricane Kiko](images/GU1hb-hurricane-kiko-expected-to-pass-north-of-hawaii.png)
+
+## NYT tracker pages
 
 - Hurricane [Erin 2025](https://www.nytimes.com/interactive/2025/weather/hurricane-erin-map-path-tracker.html)
 - Hurriane [Helene 2024](https://www.nytimes.com/interactive/2024/09/24/weather/helene-map-path-tracker.html)
